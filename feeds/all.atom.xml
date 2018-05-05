@@ -31039,4 +31039,4 @@ h6:hover .anchor-link {
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="python"></category></entry><entry><title>错误一</title><link href="https://theworldofyu.github.io/cuo-wu-yi.html" rel="alternate"></link><published>2018-01-01T00:00:00+01:00</published><updated>2018-01-01T00:00:00+01:00</updated><author><name>小宇</name></author><id>tag:theworldofyu.github.io,2018-01-01:cuo-wu-yi.html</id><summary type="html">&lt;p&gt;这就是错&lt;/p&gt;</summary></entry></feed>
+</summary><category term="python"></category></entry></feed>
