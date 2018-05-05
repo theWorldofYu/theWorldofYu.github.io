@@ -1092,22 +1092,22 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#导入相关库</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
-
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">preprocessing</span>
-<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">Ridge</span>
-
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#导入相关库</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span></span>
+<span class="code-line"><span class="o">%</span><span class="k">matplotlib</span> inline</span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">math</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">datetime</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">preprocessing</span></span>
+<span class="code-line"><span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">train_test_split</span></span>
+<span class="code-line"><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">Ridge</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">warnings</span></span>
+<span class="code-line"><span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -1126,7 +1126,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'BABA.csv'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'BABA.csv'</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -1145,7 +1145,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -1155,17 +1155,17 @@ h6:hover .anchor-link {
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 878 entries, 0 to 877
-Data columns (total 6 columns):
-date      878 non-null object
-open      878 non-null float64
-high      878 non-null float64
-low       878 non-null float64
-close     878 non-null float64
-volume    878 non-null int64
-dtypes: float64(4), int64(1), object(1)
-memory usage: 41.2+ KB
+<pre><span class="code-line">&lt;class 'pandas.core.frame.DataFrame'&gt;</span>
+<span class="code-line">RangeIndex: 878 entries, 0 to 877</span>
+<span class="code-line">Data columns (total 6 columns):</span>
+<span class="code-line">date      878 non-null object</span>
+<span class="code-line">open      878 non-null float64</span>
+<span class="code-line">high      878 non-null float64</span>
+<span class="code-line">low       878 non-null float64</span>
+<span class="code-line">close     878 non-null float64</span>
+<span class="code-line">volume    878 non-null int64</span>
+<span class="code-line">dtypes: float64(4), int64(1), object(1)</span>
+<span class="code-line">memory usage: 41.2+ KB</span>
 </pre>
 </div>
 </div>
@@ -1177,7 +1177,7 @@ memory usage: 41.2+ KB
 <div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span></span>
 </pre></div>
 </div>
 </div>
@@ -1187,7 +1187,7 @@ memory usage: 41.2+ KB
 <div class="output_area">
 <div class="prompt output_prompt">Out[28]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>Index(['close', 'volume', 'hl_pct', 'pct_change', 'fore_close'], dtype='object')</pre>
+<pre><span class="code-line">Index(['close', 'volume', 'hl_pct', 'pct_change', 'fore_close'], dtype='object')</pre>
 </div>
 </div>
 </div>
@@ -1198,7 +1198,7 @@ memory usage: 41.2+ KB
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -1280,7 +1280,7 @@ memory usage: 41.2+ KB
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -1378,9 +1378,9 @@ memory usage: 41.2+ KB
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#将行索引设置为日期，并转化为日期格式</span>
-<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'date'</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#将行索引设置为日期，并转化为日期格式</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'date'</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -1391,13 +1391,13 @@ memory usage: 41.2+ KB
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#从数据中提取更加有用的特征：盘中震荡比，股价变化比</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'hl_pct'</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'high'</span><span class="p">]</span><span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="s1">'low'</span><span class="p">])</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">'low'</span><span class="p">]</span><span class="o">*</span><span class="mf">100.0</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'pct_change'</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'close'</span><span class="p">]</span><span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="s1">'open'</span><span class="p">])</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">'open'</span><span class="p">]</span><span class="o">*</span><span class="mf">100.0</span>
-<span class="c1">#去除冗余特征：'high','low','open'</span>
-<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'high'</span><span class="p">,</span><span class="s1">'low'</span><span class="p">,</span><span class="s1">'open'</span><span class="p">],</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="c1">#查看新特征</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#从数据中提取更加有用的特征：盘中震荡比，股价变化比</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'hl_pct'</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'high'</span><span class="p">]</span><span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="s1">'low'</span><span class="p">])</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">'low'</span><span class="p">]</span><span class="o">*</span><span class="mf">100.0</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'pct_change'</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'close'</span><span class="p">]</span><span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="s1">'open'</span><span class="p">])</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">'open'</span><span class="p">]</span><span class="o">*</span><span class="mf">100.0</span></span>
+<span class="code-line"><span class="c1">#去除冗余特征：'high','low','open'</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'high'</span><span class="p">,</span><span class="s1">'low'</span><span class="p">,</span><span class="s1">'open'</span><span class="p">],</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></span>
+<span class="code-line"><span class="c1">#查看新特征</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -1482,8 +1482,8 @@ memory usage: 41.2+ KB
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#查看四年来股价走势</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'close'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#查看四年来股价走势</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'close'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span></span>
 </pre></div>
 </div>
 </div>
@@ -1493,7 +1493,7 @@ memory usage: 41.2+ KB
 <div class="output_area">
 <div class="prompt output_prompt">Out[11]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x648e6d8&gt;</pre>
+<pre><span class="code-line">&lt;matplotlib.axes._subplots.AxesSubplot at 0x648e6d8&gt;</pre>
 </div>
 </div>
 <div class="output_area">
@@ -1941,11 +1941,11 @@ hBCuJcWwEEIIIYRwLSmGhRBCCCGEa0kxLIQQQgghXOv/AZur5owwncYfAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#2015年股价涨跌天数对比</span>
-<span class="n">is_rise</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2015-01-01'</span><span class="p">:</span><span class="s1">'2015-12-31'</span><span class="p">,</span><span class="s1">'pct_change'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="s1">'rise'</span> <span class="k">if</span> <span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="k">else</span> <span class="s1">'fall'</span><span class="p">)</span>
-<span class="c1">#is_rise.count()</span>
-<span class="c1">#is_rise[is_rise==1].count()</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">is_rise</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#2015年股价涨跌天数对比</span></span>
+<span class="code-line"><span class="n">is_rise</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2015-01-01'</span><span class="p">:</span><span class="s1">'2015-12-31'</span><span class="p">,</span><span class="s1">'pct_change'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="s1">'rise'</span> <span class="k">if</span> <span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="k">else</span> <span class="s1">'fall'</span><span class="p">)</span></span>
+<span class="code-line"><span class="c1">#is_rise.count()</span></span>
+<span class="code-line"><span class="c1">#is_rise[is_rise==1].count()</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">is_rise</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -1955,7 +1955,7 @@ hBCuJcWwEEIIIYRwLSmGhRBCCCGEa0kxLIQQQgghXOv/AZur5owwncYfAAAAAElFTkSuQmCC
 <div class="output_area">
 <div class="prompt output_prompt">Out[12]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x6785668&gt;</pre>
+<pre><span class="code-line">&lt;matplotlib.axes._subplots.AxesSubplot at 0x6785668&gt;</pre>
 </div>
 </div>
 <div class="output_area">
@@ -2049,8 +2049,8 @@ BycbBKqaPQNJknMGkiTDQJKEYSBJwjCQJGEYSJKA/wfyh+QM0BXG3QAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#15年股价波动的分布</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2015-01-01'</span><span class="p">:</span><span class="s1">'2015-12-31'</span><span class="p">,</span><span class="s1">'pct_change'</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#15年股价波动的分布</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2015-01-01'</span><span class="p">:</span><span class="s1">'2015-12-31'</span><span class="p">,</span><span class="s1">'pct_change'</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -2060,7 +2060,7 @@ BycbBKqaPQNJknMGkiTDQJKEYSBJwjCQJGEYSJKA/wfyh+QM0BXG3QAAAABJRU5ErkJggg==
 <div class="output_area">
 <div class="prompt output_prompt">Out[13]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x67bd710&gt;</pre>
+<pre><span class="code-line">&lt;matplotlib.axes._subplots.AxesSubplot at 0x67bd710&gt;</pre>
 </div>
 </div>
 <div class="output_area">
@@ -2264,11 +2264,11 @@ QRpzFxHxIIW7iIgHKdxFRDxI4S4i4kEKdxERD/r/v6hDE+0y+eoAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#17年股价涨跌天数对比</span>
-<span class="n">is_rise</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2017-01-01'</span><span class="p">:</span><span class="s1">'2017-12-31'</span><span class="p">,</span><span class="s1">'pct_change'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="s1">'rise'</span> <span class="k">if</span> <span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="k">else</span> <span class="s1">'fall'</span><span class="p">)</span>
-<span class="c1">#is_rise.count()</span>
-<span class="c1">#is_rise[is_rise==1].count()</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">is_rise</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#17年股价涨跌天数对比</span></span>
+<span class="code-line"><span class="n">is_rise</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2017-01-01'</span><span class="p">:</span><span class="s1">'2017-12-31'</span><span class="p">,</span><span class="s1">'pct_change'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="s1">'rise'</span> <span class="k">if</span> <span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="k">else</span> <span class="s1">'fall'</span><span class="p">)</span></span>
+<span class="code-line"><span class="c1">#is_rise.count()</span></span>
+<span class="code-line"><span class="c1">#is_rise[is_rise==1].count()</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">is_rise</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -2278,7 +2278,7 @@ QRpzFxHxIIW7iIgHKdxFRDxI4S4i4kEKdxERD/r/v6hDE+0y+eoAAAAASUVORK5CYII=
 <div class="output_area">
 <div class="prompt output_prompt">Out[14]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0xc1c6f28&gt;</pre>
+<pre><span class="code-line">&lt;matplotlib.axes._subplots.AxesSubplot at 0xc1c6f28&gt;</pre>
 </div>
 </div>
 <div class="output_area">
@@ -2372,8 +2372,8 @@ qpojA0mSawaSJMNAkoRhIEnCMJAkYRhIkjAMJEnA/wOwCOFTyPf/SQAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#17年股价波动情况</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2017-01-01'</span><span class="p">:</span><span class="s1">'2017-12-31'</span><span class="p">,</span><span class="s1">'pct_change'</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#17年股价波动情况</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'2017-01-01'</span><span class="p">:</span><span class="s1">'2017-12-31'</span><span class="p">,</span><span class="s1">'pct_change'</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -2383,7 +2383,7 @@ qpojA0mSawaSJMNAkoRhIEnCMJAkYRhIkjAMJEnA/wOwCOFTyPf/SQAAAABJRU5ErkJggg==
 <div class="output_area">
 <div class="prompt output_prompt">Out[15]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0xc2be5c0&gt;</pre>
+<pre><span class="code-line">&lt;matplotlib.axes._subplots.AxesSubplot at 0xc2be5c0&gt;</pre>
 </div>
 </div>
 <div class="output_area">
@@ -2594,11 +2594,11 @@ ARdRF/kAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#添加目标变量fore_close</span>
-<span class="n">forecast_col</span><span class="o">=</span><span class="s1">'close'</span>
-<span class="n">forecast_out</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">0.034</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'fore_close'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">forecast_col</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="n">forecast_out</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#添加目标变量fore_close</span></span>
+<span class="code-line"><span class="n">forecast_col</span><span class="o">=</span><span class="s1">'close'</span></span>
+<span class="code-line"><span class="n">forecast_out</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">0.034</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)))</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'fore_close'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">forecast_col</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="n">forecast_out</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -2690,18 +2690,18 @@ ARdRF/kAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#提取特征向量</span>
-<span class="n">X</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'fore_close'</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
-<span class="c1">#数据归一化，使其处于同一量纲</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="c1">#将最后30条数据作为验证集</span>
-<span class="n">X_fore</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="o">-</span><span class="n">forecast_out</span><span class="p">:]</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:</span><span class="o">-</span><span class="n">forecast_out</span><span class="p">]</span>
-
-<span class="c1">#移除有缺失值的数据</span>
-<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="c1">#提取目标向量</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'fore_close'</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#提取特征向量</span></span>
+<span class="code-line"><span class="n">X</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'fore_close'</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span></span>
+<span class="code-line"><span class="c1">#数据归一化，使其处于同一量纲</span></span>
+<span class="code-line"><span class="n">X</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">X</span><span class="p">)</span></span>
+<span class="code-line"><span class="c1">#将最后30条数据作为验证集</span></span>
+<span class="code-line"><span class="n">X_fore</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="o">-</span><span class="n">forecast_out</span><span class="p">:]</span></span>
+<span class="code-line"><span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:</span><span class="o">-</span><span class="n">forecast_out</span><span class="p">]</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="c1">#移除有缺失值的数据</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></span>
+<span class="code-line"><span class="c1">#提取目标向量</span></span>
+<span class="code-line"><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'fore_close'</span><span class="p">])</span></span>
 </pre></div>
 </div>
 </div>
@@ -2712,15 +2712,15 @@ ARdRF/kAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#划分训练集和测试集</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="c1">#创建学习器</span>
-<span class="n">clf</span><span class="o">=</span><span class="n">Ridge</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="c1">#训练学习器</span>
-<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
-<span class="c1">#测试学习器</span>
-<span class="n">scores</span><span class="o">=</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#划分训练集和测试集</span></span>
+<span class="code-line"><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span></span>
+<span class="code-line"><span class="c1">#创建学习器</span></span>
+<span class="code-line"><span class="n">clf</span><span class="o">=</span><span class="n">Ridge</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span></span>
+<span class="code-line"><span class="c1">#训练学习器</span></span>
+<span class="code-line"><span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span></span>
+<span class="code-line"><span class="c1">#测试学习器</span></span>
+<span class="code-line"><span class="n">scores</span><span class="o">=</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span></span>
+<span class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -2730,7 +2730,7 @@ ARdRF/kAAAAASUVORK5CYII=
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.906238150431
+<pre><span class="code-line">0.906238150431</span>
 </pre>
 </div>
 </div>
@@ -2742,9 +2742,9 @@ ARdRF/kAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#预测验证集</span>
-<span class="n">pred</span><span class="o">=</span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_fore</span><span class="p">)</span>
-<span class="n">pred</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#预测验证集</span></span>
+<span class="code-line"><span class="n">pred</span><span class="o">=</span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_fore</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">pred</span></span>
 </pre></div>
 </div>
 </div>
@@ -2754,14 +2754,14 @@ ARdRF/kAAAAASUVORK5CYII=
 <div class="output_area">
 <div class="prompt output_prompt">Out[24]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>array([ 197.26094958,  192.44167732,  185.79605352,  191.33016225,
-        185.73470954,  178.46897119,  182.14207961,  182.81043098,
-        185.0285555 ,  193.0656088 ,  193.29009447,  189.26132863,
-        193.3494721 ,  194.52623821,  194.62722239,  199.44886809,
-        200.14679369,  193.7652298 ,  191.75719111,  187.52822919,
-        185.43469432,  187.4561668 ,  193.26417578,  195.3250307 ,
-        192.95097814,  196.55085749,  198.70293684,  194.12468337,
-        204.80918207,  206.26640174])</pre>
+<pre><span class="code-line">array([ 197.26094958,  192.44167732,  185.79605352,  191.33016225,</span>
+<span class="code-line">        185.73470954,  178.46897119,  182.14207961,  182.81043098,</span>
+<span class="code-line">        185.0285555 ,  193.0656088 ,  193.29009447,  189.26132863,</span>
+<span class="code-line">        193.3494721 ,  194.52623821,  194.62722239,  199.44886809,</span>
+<span class="code-line">        200.14679369,  193.7652298 ,  191.75719111,  187.52822919,</span>
+<span class="code-line">        185.43469432,  187.4561668 ,  193.26417578,  195.3250307 ,</span>
+<span class="code-line">        192.95097814,  196.55085749,  198.70293684,  194.12468337,</span>
+<span class="code-line">        204.80918207,  206.26640174])</pre>
 </div>
 </div>
 </div>
@@ -2772,19 +2772,19 @@ ARdRF/kAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#将未来30天的预测值添加到数据集</span>
-<span class="n">dataset</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'BABA.csv'</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">last_date</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s1">'2018/3/16'</span><span class="p">)</span>
-<span class="n">last_unix</span><span class="o">=</span><span class="n">last_date</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span>
-<span class="n">one_day</span><span class="o">=</span><span class="mi">86400</span>
-<span class="n">next_unix</span><span class="o">=</span><span class="n">last_unix</span><span class="o">+</span><span class="n">one_day</span>
-<span class="n">dataset</span><span class="p">[</span><span class="s1">'pred'</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pred</span><span class="p">:</span>
-    <span class="n">next_date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">next_unix</span><span class="p">)</span>
-    <span class="n">next_unix</span><span class="o">+=</span><span class="n">one_day</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">next_date</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span><span class="o">+</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<span class="n">dataset</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#将未来30天的预测值添加到数据集</span></span>
+<span class="code-line"><span class="n">dataset</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'BABA.csv'</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">last_date</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s1">'2018/3/16'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">last_unix</span><span class="o">=</span><span class="n">last_date</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span></span>
+<span class="code-line"><span class="n">one_day</span><span class="o">=</span><span class="mi">86400</span></span>
+<span class="code-line"><span class="n">next_unix</span><span class="o">=</span><span class="n">last_unix</span><span class="o">+</span><span class="n">one_day</span></span>
+<span class="code-line"><span class="n">dataset</span><span class="p">[</span><span class="s1">'pred'</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pred</span><span class="p">:</span></span>
+<span class="code-line">    <span class="n">next_date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">next_unix</span><span class="p">)</span></span>
+<span class="code-line">    <span class="n">next_unix</span><span class="o">+=</span><span class="n">one_day</span></span>
+<span class="code-line">    <span class="n">dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">next_date</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span><span class="o">+</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></span>
+<span class="code-line"><span class="n">dataset</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -3100,13 +3100,13 @@ ARdRF/kAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#绘制出股价走势图</span>
-<span class="n">dataset</span><span class="p">[</span><span class="s1">'close'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">)</span>
-<span class="n">dataset</span><span class="p">[</span><span class="s1">'pred'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Date'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Price'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#绘制出股价走势图</span></span>
+<span class="code-line"><span class="n">dataset</span><span class="p">[</span><span class="s1">'close'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">dataset</span><span class="p">[</span><span class="s1">'pred'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Date'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Price'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>

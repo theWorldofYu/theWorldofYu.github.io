@@ -1109,27 +1109,27 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [112]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#导入相关库文件</span>
-
-<span class="c1">#数据分析与处理</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rnd</span>
-
-<span class="c1">#可视化</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">"white"</span><span class="p">)</span>
-
-<span class="c1">#机器学习</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">confusion_matrix</span>
-
-<span class="c1">#去除多余的警告</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#导入相关库文件</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="c1">#数据分析与处理</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rnd</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="c1">#可视化</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span></span>
+<span class="code-line"><span class="o">%</span><span class="k">matplotlib</span> inline</span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">"white"</span><span class="p">)</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="c1">#机器学习</span></span>
+<span class="code-line"><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestClassifier</span></span>
+<span class="code-line"><span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">train_test_split</span></span>
+<span class="code-line"><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">confusion_matrix</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="c1">#去除多余的警告</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">warnings</span></span>
+<span class="code-line"><span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -1149,7 +1149,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [68]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'train.csv'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'train.csv'</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -1170,8 +1170,8 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#查看数据集中都有哪些特征</span>
-<span class="n">train_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#查看数据集中都有哪些特征</span></span>
+<span class="code-line"><span class="n">train_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span></span>
 </pre></div>
 </div>
 </div>
@@ -1181,8 +1181,8 @@ h6:hover .anchor-link {
 <div class="output_area">
 <div class="prompt output_prompt">Out[4]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>array(['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp',
-       'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked'], dtype=object)</pre>
+<pre><span class="code-line">array(['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp',</span>
+<span class="code-line">       'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked'], dtype=object)</pre>
 </div>
 </div>
 </div>
@@ -1208,8 +1208,8 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#查看数据集相关信息</span>
-<span class="n">train_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#查看数据集相关信息</span></span>
+<span class="code-line"><span class="n">train_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -1219,23 +1219,23 @@ h6:hover .anchor-link {
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 891 entries, 0 to 890
-Data columns (total 12 columns):
-PassengerId    891 non-null int64
-Survived       891 non-null int64
-Pclass         891 non-null int64
-Name           891 non-null object
-Sex            891 non-null object
-Age            714 non-null float64
-SibSp          891 non-null int64
-Parch          891 non-null int64
-Ticket         891 non-null object
-Fare           891 non-null float64
-Cabin          204 non-null object
-Embarked       889 non-null object
-dtypes: float64(2), int64(5), object(5)
-memory usage: 83.6+ KB
+<pre><span class="code-line">&lt;class 'pandas.core.frame.DataFrame'&gt;</span>
+<span class="code-line">RangeIndex: 891 entries, 0 to 890</span>
+<span class="code-line">Data columns (total 12 columns):</span>
+<span class="code-line">PassengerId    891 non-null int64</span>
+<span class="code-line">Survived       891 non-null int64</span>
+<span class="code-line">Pclass         891 non-null int64</span>
+<span class="code-line">Name           891 non-null object</span>
+<span class="code-line">Sex            891 non-null object</span>
+<span class="code-line">Age            714 non-null float64</span>
+<span class="code-line">SibSp          891 non-null int64</span>
+<span class="code-line">Parch          891 non-null int64</span>
+<span class="code-line">Ticket         891 non-null object</span>
+<span class="code-line">Fare           891 non-null float64</span>
+<span class="code-line">Cabin          204 non-null object</span>
+<span class="code-line">Embarked       889 non-null object</span>
+<span class="code-line">dtypes: float64(2), int64(5), object(5)</span>
+<span class="code-line">memory usage: 83.6+ KB</span>
 </pre>
 </div>
 </div>
@@ -1257,8 +1257,8 @@ memory usage: 83.6+ KB
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#浏览部分数据集</span>
-<span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#浏览部分数据集</span></span>
+<span class="code-line"><span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -1376,7 +1376,7 @@ memory usage: 83.6+ KB
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -1512,8 +1512,8 @@ memory usage: 83.6+ KB
 <div class="prompt input_prompt">In [70]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#去除没有帮助的特征</span>
-<span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'PassengerId'</span><span class="p">,</span><span class="s1">'Ticket'</span><span class="p">,</span><span class="s1">'Cabin'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#去除没有帮助的特征</span></span>
+<span class="code-line"><span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'PassengerId'</span><span class="p">,</span><span class="s1">'Ticket'</span><span class="p">,</span><span class="s1">'Cabin'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -1524,16 +1524,16 @@ memory usage: 83.6+ KB
 <div class="prompt input_prompt">In [74]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#填补'Age','Embarked'特征的缺失值</span>
-<span class="n">age_avg</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">age_std</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-<span class="n">age_nan_cnt</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="n">age_fill</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">age_avg</span> <span class="o">-</span> <span class="n">age_std</span><span class="p">,</span><span class="n">age_avg</span> <span class="o">+</span> <span class="n">age_std</span><span class="p">,</span><span class="n">age_nan_cnt</span><span class="p">)</span>
-<span class="n">train_df</span><span class="p">[</span><span class="s2">"Age"</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s2">"Age"</span><span class="p">])]</span><span class="o">=</span><span class="n">age_fill</span>
-
-<span class="n">train_df</span><span class="p">[</span><span class="s1">'Embarked'</span><span class="p">]</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Embarked'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Embarked'</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
-<span class="c1">#检查是否还有缺失值</span>
-<span class="n">train_df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#填补'Age','Embarked'特征的缺失值</span></span>
+<span class="code-line"><span class="n">age_avg</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span></span>
+<span class="code-line"><span class="n">age_std</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span></span>
+<span class="code-line"><span class="n">age_nan_cnt</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></span>
+<span class="code-line"><span class="n">age_fill</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">age_avg</span> <span class="o">-</span> <span class="n">age_std</span><span class="p">,</span><span class="n">age_avg</span> <span class="o">+</span> <span class="n">age_std</span><span class="p">,</span><span class="n">age_nan_cnt</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">train_df</span><span class="p">[</span><span class="s2">"Age"</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s2">"Age"</span><span class="p">])]</span><span class="o">=</span><span class="n">age_fill</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="n">train_df</span><span class="p">[</span><span class="s1">'Embarked'</span><span class="p">]</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Embarked'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Embarked'</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span></span>
+<span class="code-line"><span class="c1">#检查是否还有缺失值</span></span>
+<span class="code-line"><span class="n">train_df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -1543,16 +1543,16 @@ memory usage: 83.6+ KB
 <div class="output_area">
 <div class="prompt output_prompt">Out[74]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>Survived    0
-Pclass      0
-Name        0
-Sex         0
-Age         0
-SibSp       0
-Parch       0
-Fare        0
-Embarked    0
-dtype: int64</pre>
+<pre><span class="code-line">Survived    0</span>
+<span class="code-line">Pclass      0</span>
+<span class="code-line">Name        0</span>
+<span class="code-line">Sex         0</span>
+<span class="code-line">Age         0</span>
+<span class="code-line">SibSp       0</span>
+<span class="code-line">Parch       0</span>
+<span class="code-line">Fare        0</span>
+<span class="code-line">Embarked    0</span>
+<span class="code-line">dtype: int64</pre>
 </div>
 </div>
 </div>
@@ -1563,16 +1563,16 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [89]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#用正则表达式提取'Name'中的信息并添加到新建的'Title'特征中</span>
-<span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Name'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">' ([A-Za-z]+)\.'</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">'Lady'</span><span class="p">,</span><span class="s1">'Countess'</span><span class="p">,</span><span class="s1">'Capt'</span><span class="p">,</span><span class="s1">'Col'</span><span class="p">,</span><span class="s1">'Don'</span><span class="p">,</span><span class="s1">'Dr'</span><span class="p">,</span> <span class="s1">'Major'</span><span class="p">,</span>\
-                           <span class="s1">'Rev'</span><span class="p">,</span><span class="s1">'Sir'</span><span class="p">,</span><span class="s1">'Jonkheer'</span><span class="p">,</span><span class="s1">'Dona'</span><span class="p">],</span><span class="s1">'Rare'</span><span class="p">,</span><span class="n">inplace</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'Mlle'</span><span class="p">,</span> <span class="s1">'Miss'</span><span class="p">)</span>
-<span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'Ms'</span><span class="p">,</span> <span class="s1">'Miss'</span><span class="p">)</span>
-<span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'Mme'</span><span class="p">,</span> <span class="s1">'Mrs'</span><span class="p">)</span>
-<span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">"Mr"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Miss"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"Mrs"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"Master"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">"Rare"</span><span class="p">:</span> <span class="mi">5</span><span class="p">})</span>
-<span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'Name'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#用正则表达式提取'Name'中的信息并添加到新建的'Title'特征中</span></span>
+<span class="code-line"><span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Name'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">' ([A-Za-z]+)\.'</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">'Lady'</span><span class="p">,</span><span class="s1">'Countess'</span><span class="p">,</span><span class="s1">'Capt'</span><span class="p">,</span><span class="s1">'Col'</span><span class="p">,</span><span class="s1">'Don'</span><span class="p">,</span><span class="s1">'Dr'</span><span class="p">,</span> <span class="s1">'Major'</span><span class="p">,</span>\</span>
+<span class="code-line">                           <span class="s1">'Rev'</span><span class="p">,</span><span class="s1">'Sir'</span><span class="p">,</span><span class="s1">'Jonkheer'</span><span class="p">,</span><span class="s1">'Dona'</span><span class="p">],</span><span class="s1">'Rare'</span><span class="p">,</span><span class="n">inplace</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'Mlle'</span><span class="p">,</span> <span class="s1">'Miss'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'Ms'</span><span class="p">,</span> <span class="s1">'Miss'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'Mme'</span><span class="p">,</span> <span class="s1">'Mrs'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">"Mr"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Miss"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"Mrs"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"Master"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">"Rare"</span><span class="p">:</span> <span class="mi">5</span><span class="p">})</span></span>
+<span class="code-line"><span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'Name'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">train_df</span><span class="p">[</span><span class="s1">'Title'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -1582,7 +1582,7 @@ dtype: int64</pre>
 <div class="output_area">
 <div class="prompt output_prompt">Out[89]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>array([1, 3, 2, 4, 5], dtype=int64)</pre>
+<pre><span class="code-line">array([1, 3, 2, 4, 5], dtype=int64)</pre>
 </div>
 </div>
 </div>
@@ -1593,10 +1593,10 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [93]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#对'Sex','Embarked'类别变量进行编码</span>
-<span class="n">train_df</span><span class="p">[</span><span class="s1">'Sex'</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">'Sex'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span> <span class="p">{</span><span class="s1">'female'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'male'</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span> <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<span class="n">train_df</span><span class="p">[</span><span class="s1">'Embarked'</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">'Embarked'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span> <span class="p">{</span><span class="s1">'S'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'Q'</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span> <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#对'Sex','Embarked'类别变量进行编码</span></span>
+<span class="code-line"><span class="n">train_df</span><span class="p">[</span><span class="s1">'Sex'</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">'Sex'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span> <span class="p">{</span><span class="s1">'female'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'male'</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span> <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">train_df</span><span class="p">[</span><span class="s1">'Embarked'</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">'Embarked'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span> <span class="p">{</span><span class="s1">'S'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'Q'</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span> <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -1713,16 +1713,16 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [30]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'Survived'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">train_df</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="s1">'coolwarm'</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Survival count'</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">([</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Survived'</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">-</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Survived'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Survived'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()],</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">'No Survived'</span><span class="p">,</span><span class="s1">'Survived'</span><span class="p">],</span><span class="n">autopct</span><span class="o">=</span><span class="s1">'</span><span class="si">%1.0f%%</span><span class="s1">'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Survival rate'</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'Survived'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">train_df</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="s1">'coolwarm'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Survival count'</span><span class="p">)</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">([</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Survived'</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">-</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Survived'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Survived'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()],</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">'No Survived'</span><span class="p">,</span><span class="s1">'Survived'</span><span class="p">],</span><span class="n">autopct</span><span class="o">=</span><span class="s1">'</span><span class="si">%1.0f%%</span><span class="s1">'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Survival rate'</span><span class="p">)</span> </span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -2040,19 +2040,19 @@ TkSuQmCC
 <div class="prompt input_prompt">In [46]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#各船舱生还人数及比例</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'Pclass'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Survived'</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">],</span><span class="n">palette</span><span class="o">=</span><span class="s1">'coolwarm'</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Pclass Count'</span><span class="p">)</span> 
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">train_df</span><span class="p">[[</span><span class="s1">'Pclass'</span><span class="p">,</span><span class="s1">'Survived'</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'Pclass'</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>\
-        <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">'1'</span><span class="p">,</span><span class="s1">'2'</span><span class="p">,</span><span class="s1">'3'</span><span class="p">],</span><span class="n">autopct</span><span class="o">=</span><span class="s1">'</span><span class="si">%1.0f%%</span><span class="s1">'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Survival rate of Pclass'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#各船舱生还人数及比例</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="p">,</span><span class="mi">5</span><span class="p">))</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'Pclass'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Survived'</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">],</span><span class="n">palette</span><span class="o">=</span><span class="s1">'coolwarm'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Pclass Count'</span><span class="p">)</span> </span>
+<span class="code-line"></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">train_df</span><span class="p">[[</span><span class="s1">'Pclass'</span><span class="p">,</span><span class="s1">'Survived'</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'Pclass'</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>\</span>
+<span class="code-line">        <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">'1'</span><span class="p">,</span><span class="s1">'2'</span><span class="p">,</span><span class="s1">'3'</span><span class="p">],</span><span class="n">autopct</span><span class="o">=</span><span class="s1">'</span><span class="si">%1.0f%%</span><span class="s1">'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Survival rate of Pclass'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -2394,17 +2394,17 @@ SZKklBhikiRJKTHEJEmSUmKISZIkpeQbxlFHn4quK50AAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [49]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'Sex'</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Survived'</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">],</span> <span class="n">palette</span><span class="o">=</span><span class="s1">'coolwarm'</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Sex'</span><span class="p">)</span> 
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">train_df</span><span class="p">[[</span><span class="s1">'Sex'</span><span class="p">,</span><span class="s1">'Survived'</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'Sex'</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>\
-        <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">'female'</span><span class="p">,</span><span class="s1">'male'</span><span class="p">],</span><span class="n">autopct</span><span class="o">=</span><span class="s1">'</span><span class="si">%1.0f%%</span><span class="s1">'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Survival rate of Sex'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="p">,</span><span class="mi">5</span><span class="p">))</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'Sex'</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Survived'</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">],</span> <span class="n">palette</span><span class="o">=</span><span class="s1">'coolwarm'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Sex'</span><span class="p">)</span> </span>
+<span class="code-line"></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">train_df</span><span class="p">[[</span><span class="s1">'Sex'</span><span class="p">,</span><span class="s1">'Survived'</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'Sex'</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>\</span>
+<span class="code-line">        <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">'female'</span><span class="p">,</span><span class="s1">'male'</span><span class="p">],</span><span class="n">autopct</span><span class="o">=</span><span class="s1">'</span><span class="si">%1.0f%%</span><span class="s1">'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Survival rate of Sex'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -2712,17 +2712,17 @@ GPhEAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [95]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Survived'</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">][</span><span class="s1">'Age'</span><span class="p">])</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Survived==1'</span><span class="p">)</span> 
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Survived'</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">][</span><span class="s1">'Age'</span><span class="p">])</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Survived==0'</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="p">,</span><span class="mi">5</span><span class="p">))</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Survived'</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">][</span><span class="s1">'Age'</span><span class="p">])</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Survived==1'</span><span class="p">)</span> </span>
+<span class="code-line"></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Survived'</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">][</span><span class="s1">'Age'</span><span class="p">])</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Survived==0'</span><span class="p">)</span> </span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -3196,7 +3196,7 @@ Gi4hhBBCiD4mDZcQQgghRB+ThksIIYQQoo/9f/D+CIh60zVgAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [96]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Fare'</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">'Fare'</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -3206,15 +3206,15 @@ Gi4hhBBCiD4mDZcQQgghRB+ThksIIYQQoo/9f/D+CIh60zVgAAAAAElFTkSuQmCC
 <div class="output_area">
 <div class="prompt output_prompt">Out[96]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>count    891.000000
-mean      32.204208
-std       49.693429
-min        0.000000
-25%        7.910400
-50%       14.454200
-75%       31.000000
-max      512.329200
-Name: Fare, dtype: float64</pre>
+<pre><span class="code-line">count    891.000000</span>
+<span class="code-line">mean      32.204208</span>
+<span class="code-line">std       49.693429</span>
+<span class="code-line">min        0.000000</span>
+<span class="code-line">25%        7.910400</span>
+<span class="code-line">50%       14.454200</span>
+<span class="code-line">75%       31.000000</span>
+<span class="code-line">max      512.329200</span>
+<span class="code-line">Name: Fare, dtype: float64</pre>
 </div>
 </div>
 </div>
@@ -3225,9 +3225,9 @@ Name: Fare, dtype: float64</pre>
 <div class="prompt input_prompt">In [105]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fare_not_survived</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">"Fare"</span><span class="p">][</span><span class="n">train_df</span><span class="p">[</span><span class="s2">"Survived"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">fare_survived</span>     <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">"Fare"</span><span class="p">][</span><span class="n">train_df</span><span class="p">[</span><span class="s2">"Survived"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">fare_not_survived</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">fare_not_survived</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">"Fare"</span><span class="p">][</span><span class="n">train_df</span><span class="p">[</span><span class="s2">"Survived"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span></span>
+<span class="code-line"><span class="n">fare_survived</span>     <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">"Fare"</span><span class="p">][</span><span class="n">train_df</span><span class="p">[</span><span class="s2">"Survived"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span></span>
+<span class="code-line"><span class="n">fare_not_survived</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -3237,7 +3237,7 @@ Name: Fare, dtype: float64</pre>
 <div class="output_area">
 <div class="prompt output_prompt">Out[105]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>22.117886885245877</pre>
+<pre><span class="code-line">22.117886885245877</pre>
 </div>
 </div>
 </div>
@@ -3248,7 +3248,7 @@ Name: Fare, dtype: float64</pre>
 <div class="prompt input_prompt">In [104]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fare_survived</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">fare_survived</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -3258,7 +3258,7 @@ Name: Fare, dtype: float64</pre>
 <div class="output_area">
 <div class="prompt output_prompt">Out[104]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>48.39540760233917</pre>
+<pre><span class="code-line">48.39540760233917</pre>
 </div>
 </div>
 </div>
@@ -3269,11 +3269,11 @@ Name: Fare, dtype: float64</pre>
 <div class="prompt input_prompt">In [107]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">avgerage_fare</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">fare_not_survived</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">fare_survived</span><span class="o">.</span><span class="n">mean</span><span class="p">()])</span>
-<span class="n">std_fare</span>      <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">fare_not_survived</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="n">fare_survived</span><span class="o">.</span><span class="n">std</span><span class="p">()])</span>
-<span class="n">avgerage_fare</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yerr</span><span class="o">=</span><span class="n">std_fare</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s1">'bar'</span><span class="p">,</span><span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">avgerage_fare</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">fare_not_survived</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">fare_survived</span><span class="o">.</span><span class="n">mean</span><span class="p">()])</span></span>
+<span class="code-line"><span class="n">std_fare</span>      <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">fare_not_survived</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="n">fare_survived</span><span class="o">.</span><span class="n">std</span><span class="p">()])</span></span>
+<span class="code-line"><span class="n">avgerage_fare</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yerr</span><span class="o">=</span><span class="n">std_fare</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s1">'bar'</span><span class="p">,</span><span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -3388,21 +3388,21 @@ AGAIUQcAQ4g6ABhC1AHAEKIOAIb8B5n0wFFvsb75AAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [123]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#按照目标变量对数据集拆分</span>
-<span class="n">X_train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">"Survived"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">y_train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">"Survived"</span><span class="p">]</span>
-
-<span class="c1">#将数据集进一步划分为训练集和测试集</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>\
-                            <span class="n">X_train_df</span><span class="p">,</span> <span class="n">y_train_df</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="c1">#创建分类器实例</span>
-<span class="n">clf</span><span class="o">=</span><span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="c1">#训练数据</span>
-<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
-<span class="c1">#对测试集进行预测</span>
-<span class="n">pred</span><span class="o">=</span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="c1">#验证预测精度</span>
-<span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#按照目标变量对数据集拆分</span></span>
+<span class="code-line"><span class="n">X_train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">"Survived"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">y_train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">"Survived"</span><span class="p">]</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="c1">#将数据集进一步划分为训练集和测试集</span></span>
+<span class="code-line"><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>\</span>
+<span class="code-line">                            <span class="n">X_train_df</span><span class="p">,</span> <span class="n">y_train_df</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></span>
+<span class="code-line"><span class="c1">#创建分类器实例</span></span>
+<span class="code-line"><span class="n">clf</span><span class="o">=</span><span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span></span>
+<span class="code-line"><span class="c1">#训练数据</span></span>
+<span class="code-line"><span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span></span>
+<span class="code-line"><span class="c1">#对测试集进行预测</span></span>
+<span class="code-line"><span class="n">pred</span><span class="o">=</span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span></span>
+<span class="code-line"><span class="c1">#验证预测精度</span></span>
+<span class="code-line"><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -3412,7 +3412,7 @@ AGAIUQcAQ4g6ABhC1AHAEKIOAIb8B5n0wFFvsb75AAAAAElFTkSuQmCC
 <div class="output_area">
 <div class="prompt output_prompt">Out[123]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>0.84304932735426008</pre>
+<pre><span class="code-line">0.84304932735426008</pre>
 </div>
 </div>
 </div>
@@ -3423,7 +3423,7 @@ AGAIUQcAQ4g6ABhC1AHAEKIOAIb8B5n0wFFvsb75AAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [125]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -3433,8 +3433,8 @@ AGAIUQcAQ4g6ABhC1AHAEKIOAIb8B5n0wFFvsb75AAAAAElFTkSuQmCC
 <div class="output_area">
 <div class="prompt output_prompt">Out[125]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[126,  22],
-       [ 13,  62]])</pre>
+<pre><span class="code-line">array([[126,  22],</span>
+<span class="code-line">       [ 13,  62]])</pre>
 </div>
 </div>
 </div>

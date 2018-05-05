@@ -1092,17 +1092,17 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#导入相应数据分析库</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">datetime</span>
-
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#导入相应数据分析库</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span></span>
+<span class="code-line"><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span></span>
+<span class="code-line"><span class="o">%</span><span class="k">matplotlib</span> inline</span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">datetime</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">warnings</span></span>
+<span class="code-line"><span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -1113,7 +1113,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'ted_main.csv'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'ted_main.csv'</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -1124,11 +1124,11 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#对'film_date','published_date'特征做格式转换</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span>\
-                                     <span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'published_date'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'published_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span>\
-                                     <span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#对'film_date','published_date'特征做格式转换</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span>\</span>
+<span class="code-line">                                     <span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">))</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'published_date'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'published_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span>\</span>
+<span class="code-line">                                     <span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">))</span></span>
 </pre></div>
 </div>
 </div>
@@ -1139,12 +1139,12 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#提取月份</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'month'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
-<span class="c1">#按照月份演讲对演讲计数并创建子集</span>
-<span class="n">month_df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'month'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">month_df</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'month'</span><span class="p">,</span><span class="s1">'talks'</span><span class="p">]</span>
-<span class="n">month_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#提取月份</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'month'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span></span>
+<span class="code-line"><span class="c1">#按照月份演讲对演讲计数并创建子集</span></span>
+<span class="code-line"><span class="n">month_df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'month'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span></span>
+<span class="code-line"><span class="n">month_df</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'month'</span><span class="p">,</span><span class="s1">'talks'</span><span class="p">]</span></span>
+<span class="code-line"><span class="n">month_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -1202,10 +1202,10 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#绘制各月观看量的分布图</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">'white'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'month'</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">'talks'</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">month_df</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#绘制各月观看量的分布图</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">'white'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'month'</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">'talks'</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">month_df</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -1215,7 +1215,7 @@ h6:hover .anchor-link {
 <div class="output_area">
 <div class="prompt output_prompt">Out[7]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0xad08278&gt;</pre>
+<pre><span class="code-line">&lt;matplotlib.axes._subplots.AxesSubplot at 0xad08278&gt;</pre>
 </div>
 </div>
 <div class="output_area">
@@ -1385,12 +1385,12 @@ AAAsokQDAAAAFlGiAQAAAIso0QAAAIBF/w8GCi2rt7U7DAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#提取年份</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
-<span class="c1">#按照年份对演讲进行计数，并创建子集</span>
-<span class="n">year_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
-<span class="n">year_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'year'</span><span class="p">,</span> <span class="s1">'talks'</span><span class="p">]</span>
-<span class="n">year_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#提取年份</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span></span>
+<span class="code-line"><span class="c1">#按照年份对演讲进行计数，并创建子集</span></span>
+<span class="code-line"><span class="n">year_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span></span>
+<span class="code-line"><span class="n">year_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'year'</span><span class="p">,</span> <span class="s1">'talks'</span><span class="p">]</span></span>
+<span class="code-line"><span class="n">year_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -1448,9 +1448,9 @@ AAAsokQDAAAAFlGiAQAAAIso0QAAAIBF/w8GCi2rt7U7DAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">'white'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'year'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'talks'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">year_df</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">'white'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'year'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'talks'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">year_df</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -1460,7 +1460,7 @@ AAAsokQDAAAAFlGiAQAAAIso0QAAAIBF/w8GCi2rt7U7DAAAAABJRU5ErkJggg==
 <div class="output_area">
 <div class="prompt output_prompt">Out[9]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0xb0180b8&gt;</pre>
+<pre><span class="code-line">&lt;matplotlib.axes._subplots.AxesSubplot at 0xb0180b8&gt;</pre>
 </div>
 </div>
 <div class="output_area">
@@ -1919,27 +1919,27 @@ tAAAABJJREFU5FiAICIiIiIiIiLJ/X/MWtjSiTfNeAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#创建hmap_df子集用来显示不同年份与月份关于演讲数量的热力图</span>
-
-<span class="c1">#为了不改变原数据集，对其复制后进行操作</span>
-<span class="n">hmap_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="c1">#将film_date特征转换成只包含年和月的格式</span>
-<span class="n">hmap_df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">hmap_df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> \
-                      <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]))</span>
-<span class="c1">#更新hmap_df为日期作为索引，演讲数量作为值的数据表</span>
-<span class="n">hmap_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">hmap_df</span><span class="p">[[</span><span class="s1">'film_date'</span><span class="p">,</span> <span class="s1">'title'</span><span class="p">]],</span> <span class="n">index</span><span class="o">=</span><span class="s1">'film_date'</span><span class="p">,</span>\
-                         <span class="n">aggfunc</span><span class="o">=</span><span class="s1">'count'</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="c1">#提取日期的月份</span>
-<span class="n">hmap_df</span><span class="p">[</span><span class="s1">'month'</span><span class="p">]</span> <span class="o">=</span> <span class="n">hmap_df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">])</span>
-<span class="c1">#提取日期的年份</span>
-<span class="n">hmap_df</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span> <span class="o">=</span> <span class="n">hmap_df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
-<span class="c1">#对数据表按照月份和年份进行排序</span>
-<span class="n">hmap_df</span> <span class="o">=</span> <span class="n">hmap_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">'year'</span><span class="p">,</span><span class="s1">'month'</span><span class="p">])</span>
-<span class="c1">#以月份进行行索引，年份作为列索引，演讲数量作为值来更新数据表</span>
-<span class="n">hmap_df</span> <span class="o">=</span> <span class="n">hmap_df</span><span class="p">[[</span><span class="s1">'month'</span><span class="p">,</span> <span class="s1">'year'</span><span class="p">,</span> <span class="s1">'title'</span><span class="p">]]</span>
-<span class="n">hmap_df</span> <span class="o">=</span> <span class="n">hmap_df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="s1">'month'</span><span class="p">,</span><span class="s1">'year'</span><span class="p">,</span><span class="s1">'title'</span><span class="p">)</span>
-<span class="c1">#填补缺失值</span>
-<span class="n">hmap_df</span> <span class="o">=</span> <span class="n">hmap_df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#创建hmap_df子集用来显示不同年份与月份关于演讲数量的热力图</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="c1">#为了不改变原数据集，对其复制后进行操作</span></span>
+<span class="code-line"><span class="n">hmap_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></span>
+<span class="code-line"><span class="c1">#将film_date特征转换成只包含年和月的格式</span></span>
+<span class="code-line"><span class="n">hmap_df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">hmap_df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> \</span>
+<span class="code-line">                      <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'-'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]))</span></span>
+<span class="code-line"><span class="c1">#更新hmap_df为日期作为索引，演讲数量作为值的数据表</span></span>
+<span class="code-line"><span class="n">hmap_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">hmap_df</span><span class="p">[[</span><span class="s1">'film_date'</span><span class="p">,</span> <span class="s1">'title'</span><span class="p">]],</span> <span class="n">index</span><span class="o">=</span><span class="s1">'film_date'</span><span class="p">,</span>\</span>
+<span class="code-line">                         <span class="n">aggfunc</span><span class="o">=</span><span class="s1">'count'</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span></span>
+<span class="code-line"><span class="c1">#提取日期的月份</span></span>
+<span class="code-line"><span class="n">hmap_df</span><span class="p">[</span><span class="s1">'month'</span><span class="p">]</span> <span class="o">=</span> <span class="n">hmap_df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">])</span></span>
+<span class="code-line"><span class="c1">#提取日期的年份</span></span>
+<span class="code-line"><span class="n">hmap_df</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span> <span class="o">=</span> <span class="n">hmap_df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span></span>
+<span class="code-line"><span class="c1">#对数据表按照月份和年份进行排序</span></span>
+<span class="code-line"><span class="n">hmap_df</span> <span class="o">=</span> <span class="n">hmap_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">'year'</span><span class="p">,</span><span class="s1">'month'</span><span class="p">])</span></span>
+<span class="code-line"><span class="c1">#以月份进行行索引，年份作为列索引，演讲数量作为值来更新数据表</span></span>
+<span class="code-line"><span class="n">hmap_df</span> <span class="o">=</span> <span class="n">hmap_df</span><span class="p">[[</span><span class="s1">'month'</span><span class="p">,</span> <span class="s1">'year'</span><span class="p">,</span> <span class="s1">'title'</span><span class="p">]]</span></span>
+<span class="code-line"><span class="n">hmap_df</span> <span class="o">=</span> <span class="n">hmap_df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="s1">'month'</span><span class="p">,</span><span class="s1">'year'</span><span class="p">,</span><span class="s1">'title'</span><span class="p">)</span></span>
+<span class="code-line"><span class="c1">#填补缺失值</span></span>
+<span class="code-line"><span class="n">hmap_df</span> <span class="o">=</span> <span class="n">hmap_df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -1950,11 +1950,11 @@ tAAAABJJREFU5FiAICIiIiIiIiLJ/X/MWtjSiTfNeAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#绘制热力图</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">hmap_df</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">'RdBu_r'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#绘制热力图</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">hmap_df</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">'RdBu_r'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -2675,9 +2675,9 @@ Vv0vzlNRLv9tT1IAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#将tags特征里的内容转换成原有格式(字符串)</span>
-<span class="kn">import</span> <span class="nn">ast</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'tags'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'tags'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#将tags特征里的内容转换成原有格式(字符串)</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">ast</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'tags'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'tags'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">x</span><span class="p">))</span></span>
 </pre></div>
 </div>
 </div>
@@ -2688,9 +2688,9 @@ Vv0vzlNRLv9tT1IAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#新建Series类型变量来存储每行tags的内容</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">'tags'</span><span class="p">]),</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'theme'</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#新建Series类型变量来存储每行tags的内容</span></span>
+<span class="code-line"><span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">'tags'</span><span class="p">]),</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'theme'</span></span>
 </pre></div>
 </div>
 </div>
@@ -2701,8 +2701,8 @@ Vv0vzlNRLv9tT1IAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#将包含主题的变量s添加到数据集并移除原tags列</span>
-<span class="n">theme_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'tags'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#将包含主题的变量s添加到数据集并移除原tags列</span></span>
+<span class="code-line"><span class="n">theme_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'tags'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -2713,12 +2713,12 @@ Vv0vzlNRLv9tT1IAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#对不同主题的演讲进行计数</span>
-<span class="n">pop_themes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">theme_df</span><span class="p">[</span><span class="s1">'theme'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="c1">#提取只包含主题和对应的演讲数目的子集</span>
-<span class="n">pop_themes</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'theme'</span><span class="p">,</span> <span class="s1">'talks'</span><span class="p">]</span>
-<span class="c1">#查看演讲数目最多的前十个主题</span>
-<span class="n">pop_themes</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#对不同主题的演讲进行计数</span></span>
+<span class="code-line"><span class="n">pop_themes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">theme_df</span><span class="p">[</span><span class="s1">'theme'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span></span>
+<span class="code-line"><span class="c1">#提取只包含主题和对应的演讲数目的子集</span></span>
+<span class="code-line"><span class="n">pop_themes</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'theme'</span><span class="p">,</span> <span class="s1">'talks'</span><span class="p">]</span></span>
+<span class="code-line"><span class="c1">#查看演讲数目最多的前十个主题</span></span>
+<span class="code-line"><span class="n">pop_themes</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -2801,9 +2801,9 @@ Vv0vzlNRLv9tT1IAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'theme'</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">'talks'</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">pop_themes</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'theme'</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">'talks'</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">pop_themes</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -3045,10 +3045,10 @@ AAAAwE3/D+iINywoeUZeAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#提取演讲主题在前8(不包含TEDx演讲)且08年之后的数据子集</span>
-<span class="n">theme_talks</span><span class="o">=</span><span class="n">theme_df</span><span class="p">[(</span><span class="n">theme_df</span><span class="p">[</span><span class="s1">'theme'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">pop_themes</span><span class="p">[:</span><span class="mi">8</span><span class="p">][</span><span class="s1">'theme'</span><span class="p">]))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">theme_df</span><span class="p">[</span><span class="s1">'theme'</span><span class="p">]</span><span class="o">!=</span><span class="s1">'TEDx'</span><span class="p">)]</span>
-<span class="n">theme_talks</span><span class="o">=</span><span class="n">theme_talks</span><span class="p">[</span><span class="n">theme_talks</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">2008</span><span class="p">]</span>
-<span class="n">theme_talks</span><span class="o">.</span><span class="n">shape</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#提取演讲主题在前8(不包含TEDx演讲)且08年之后的数据子集</span></span>
+<span class="code-line"><span class="n">theme_talks</span><span class="o">=</span><span class="n">theme_df</span><span class="p">[(</span><span class="n">theme_df</span><span class="p">[</span><span class="s1">'theme'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">pop_themes</span><span class="p">[:</span><span class="mi">8</span><span class="p">][</span><span class="s1">'theme'</span><span class="p">]))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">theme_df</span><span class="p">[</span><span class="s1">'theme'</span><span class="p">]</span><span class="o">!=</span><span class="s1">'TEDx'</span><span class="p">)]</span></span>
+<span class="code-line"><span class="n">theme_talks</span><span class="o">=</span><span class="n">theme_talks</span><span class="p">[</span><span class="n">theme_talks</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">2008</span><span class="p">]</span></span>
+<span class="code-line"><span class="n">theme_talks</span><span class="o">.</span><span class="n">shape</span></span>
 </pre></div>
 </div>
 </div>
@@ -3058,7 +3058,7 @@ AAAAwE3/D+iINywoeUZeAAAAAElFTkSuQmCC
 <div class="output_area">
 <div class="prompt output_prompt">Out[22]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>(2490, 19)</pre>
+<pre><span class="code-line">(2490, 19)</pre>
 </div>
 </div>
 </div>
@@ -3069,10 +3069,10 @@ AAAAwE3/D+iINywoeUZeAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#创建以年份作为行索引，主题作为列索引的新表</span>
-<span class="n">ctab</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">([</span><span class="n">theme_talks</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]],</span> <span class="n">theme_talks</span><span class="p">[</span><span class="s1">'theme'</span><span class="p">])</span>
-<span class="c1">#将每行的演讲数以比例方式呈现</span>
-<span class="n">ctab</span><span class="o">=</span><span class="n">ctab</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">/</span><span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#创建以年份作为行索引，主题作为列索引的新表</span></span>
+<span class="code-line"><span class="n">ctab</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">([</span><span class="n">theme_talks</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]],</span> <span class="n">theme_talks</span><span class="p">[</span><span class="s1">'theme'</span><span class="p">])</span></span>
+<span class="code-line"><span class="c1">#将每行的演讲数以比例方式呈现</span></span>
+<span class="code-line"><span class="n">ctab</span><span class="o">=</span><span class="n">ctab</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">/</span><span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   </span>
 </pre></div>
 </div>
 </div>
@@ -3083,12 +3083,12 @@ AAAAwE3/D+iINywoeUZeAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">themes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">pop_themes</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">8</span><span class="p">)[</span><span class="s1">'theme'</span><span class="p">])</span>
-<span class="n">themes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">'TEDx'</span><span class="p">)</span>
-<span class="c1">#绘制曲线</span>
-<span class="n">ctab</span><span class="p">[</span><span class="n">themes</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'line'</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="n">colormap</span><span class="o">=</span><span class="s1">'rainbow'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">themes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">pop_themes</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">8</span><span class="p">)[</span><span class="s1">'theme'</span><span class="p">])</span></span>
+<span class="code-line"><span class="n">themes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">'TEDx'</span><span class="p">)</span></span>
+<span class="code-line"><span class="c1">#绘制曲线</span></span>
+<span class="code-line"><span class="n">ctab</span><span class="p">[</span><span class="n">themes</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'line'</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="n">colormap</span><span class="o">=</span><span class="s1">'rainbow'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>

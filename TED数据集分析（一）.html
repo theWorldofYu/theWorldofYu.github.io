@@ -1100,17 +1100,17 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#导入相应数据分析库</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">datetime</span>
-
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#导入相应数据分析库</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span></span>
+<span class="code-line"><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span></span>
+<span class="code-line"><span class="o">%</span><span class="k">matplotlib</span> inline</span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">datetime</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">warnings</span></span>
+<span class="code-line"><span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -1121,8 +1121,8 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'ted_main.csv'</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'ted_main.csv'</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -1210,7 +1210,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span></span>
 </pre></div>
 </div>
 </div>
@@ -1220,11 +1220,11 @@ h6:hover .anchor-link {
 <div class="output_area">
 <div class="prompt output_prompt">Out[3]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>Index(['comments', 'description', 'duration', 'event', 'film_date',
-       'languages', 'main_speaker', 'name', 'num_speaker', 'published_date',
-       'ratings', 'related_talks', 'speaker_occupation', 'tags', 'title',
-       'url', 'views'],
-      dtype='object')</pre>
+<pre><span class="code-line">Index(['comments', 'description', 'duration', 'event', 'film_date',</span>
+<span class="code-line">       'languages', 'main_speaker', 'name', 'num_speaker', 'published_date',</span>
+<span class="code-line">       'ratings', 'related_talks', 'speaker_occupation', 'tags', 'title',</span>
+<span class="code-line">       'url', 'views'],</span>
+<span class="code-line">      dtype='object')</pre>
 </div>
 </div>
 </div>
@@ -1235,7 +1235,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -1245,28 +1245,28 @@ h6:hover .anchor-link {
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 2550 entries, 0 to 2549
-Data columns (total 17 columns):
-comments              2550 non-null int64
-description           2550 non-null object
-duration              2550 non-null int64
-event                 2550 non-null object
-film_date             2550 non-null int64
-languages             2550 non-null int64
-main_speaker          2550 non-null object
-name                  2550 non-null object
-num_speaker           2550 non-null int64
-published_date        2550 non-null int64
-ratings               2550 non-null object
-related_talks         2550 non-null object
-speaker_occupation    2544 non-null object
-tags                  2550 non-null object
-title                 2550 non-null object
-url                   2550 non-null object
-views                 2550 non-null int64
-dtypes: int64(7), object(10)
-memory usage: 338.8+ KB
+<pre><span class="code-line">&lt;class 'pandas.core.frame.DataFrame'&gt;</span>
+<span class="code-line">RangeIndex: 2550 entries, 0 to 2549</span>
+<span class="code-line">Data columns (total 17 columns):</span>
+<span class="code-line">comments              2550 non-null int64</span>
+<span class="code-line">description           2550 non-null object</span>
+<span class="code-line">duration              2550 non-null int64</span>
+<span class="code-line">event                 2550 non-null object</span>
+<span class="code-line">film_date             2550 non-null int64</span>
+<span class="code-line">languages             2550 non-null int64</span>
+<span class="code-line">main_speaker          2550 non-null object</span>
+<span class="code-line">name                  2550 non-null object</span>
+<span class="code-line">num_speaker           2550 non-null int64</span>
+<span class="code-line">published_date        2550 non-null int64</span>
+<span class="code-line">ratings               2550 non-null object</span>
+<span class="code-line">related_talks         2550 non-null object</span>
+<span class="code-line">speaker_occupation    2544 non-null object</span>
+<span class="code-line">tags                  2550 non-null object</span>
+<span class="code-line">title                 2550 non-null object</span>
+<span class="code-line">url                   2550 non-null object</span>
+<span class="code-line">views                 2550 non-null int64</span>
+<span class="code-line">dtypes: int64(7), object(10)</span>
+<span class="code-line">memory usage: 338.8+ KB</span>
 </pre>
 </div>
 </div>
@@ -1311,7 +1311,7 @@ memory usage: 338.8+ KB
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span></span>
 </pre></div>
 </div>
 </div>
@@ -1321,12 +1321,12 @@ memory usage: 338.8+ KB
 <div class="output_area">
 <div class="prompt output_prompt">Out[5]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>0    1140825600
-1    1140825600
-2    1140739200
-3    1140912000
-4    1140566400
-Name: film_date, dtype: int64</pre>
+<pre><span class="code-line">0    1140825600</span>
+<span class="code-line">1    1140825600</span>
+<span class="code-line">2    1140739200</span>
+<span class="code-line">3    1140912000</span>
+<span class="code-line">4    1140566400</span>
+<span class="code-line">Name: film_date, dtype: int64</pre>
 </div>
 </div>
 </div>
@@ -1337,7 +1337,7 @@ Name: film_date, dtype: int64</pre>
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'published_date'</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'published_date'</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span></span>
 </pre></div>
 </div>
 </div>
@@ -1347,12 +1347,12 @@ Name: film_date, dtype: int64</pre>
 <div class="output_area">
 <div class="prompt output_prompt">Out[6]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>0    1151367060
-1    1151367060
-2    1151367060
-3    1151367060
-4    1151440680
-Name: published_date, dtype: int64</pre>
+<pre><span class="code-line">0    1151367060</span>
+<span class="code-line">1    1151367060</span>
+<span class="code-line">2    1151367060</span>
+<span class="code-line">3    1151367060</span>
+<span class="code-line">4    1151440680</span>
+<span class="code-line">Name: published_date, dtype: int64</pre>
 </div>
 </div>
 </div>
@@ -1371,11 +1371,11 @@ Name: published_date, dtype: int64</pre>
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#对'film_date','published_date'特征做格式转换</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span>\
-                                     <span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'published_date'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'published_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span>\
-                                     <span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#对'film_date','published_date'特征做格式转换</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'film_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span>\</span>
+<span class="code-line">                                     <span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">))</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'published_date'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'published_date'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span>\</span>
+<span class="code-line">                                     <span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">))</span></span>
 </pre></div>
 </div>
 </div>
@@ -1386,8 +1386,8 @@ Name: published_date, dtype: int64</pre>
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#转换后的时间格式</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'published_date'</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#转换后的时间格式</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'published_date'</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span></span>
 </pre></div>
 </div>
 </div>
@@ -1397,12 +1397,12 @@ Name: published_date, dtype: int64</pre>
 <div class="output_area">
 <div class="prompt output_prompt">Out[8]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>0    2006-06-27
-1    2006-06-27
-2    2006-06-27
-3    2006-06-27
-4    2006-06-28
-Name: published_date, dtype: object</pre>
+<pre><span class="code-line">0    2006-06-27</span>
+<span class="code-line">1    2006-06-27</span>
+<span class="code-line">2    2006-06-27</span>
+<span class="code-line">3    2006-06-27</span>
+<span class="code-line">4    2006-06-28</span>
+<span class="code-line">Name: published_date, dtype: object</pre>
 </div>
 </div>
 </div>
@@ -1421,10 +1421,10 @@ Name: published_date, dtype: object</pre>
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#创建有关观看量的子集</span>
-<span class="n">by_views</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s1">'title'</span><span class="p">,</span><span class="s1">'main_speaker'</span><span class="p">,</span><span class="s1">'views'</span><span class="p">,</span><span class="s1">'film_date'</span><span class="p">]]</span><span class="o">.</span>\
-                                        <span class="n">sort_values</span><span class="p">(</span><span class="s1">'views'</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)[:</span><span class="mi">20</span><span class="p">]</span>
-<span class="n">by_views</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#创建有关观看量的子集</span></span>
+<span class="code-line"><span class="n">by_views</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s1">'title'</span><span class="p">,</span><span class="s1">'main_speaker'</span><span class="p">,</span><span class="s1">'views'</span><span class="p">,</span><span class="s1">'film_date'</span><span class="p">]]</span><span class="o">.</span>\</span>
+<span class="code-line">                                        <span class="n">sort_values</span><span class="p">(</span><span class="s1">'views'</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)[:</span><span class="mi">20</span><span class="p">]</span></span>
+<span class="code-line"><span class="n">by_views</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span></span>
 </pre></div>
 </div>
 </div>
@@ -1494,10 +1494,10 @@ Name: published_date, dtype: object</pre>
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'main_speaker'</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">'views'</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">by_views</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'main_speaker'</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">'views'</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">by_views</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -1841,8 +1841,8 @@ REQACcYREREREQCcA4erxvErJqd0AAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#查看分布情况</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'views'</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#查看分布情况</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'views'</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span></span>
 </pre></div>
 </div>
 </div>
@@ -1852,15 +1852,15 @@ REQACcYREREREQCcA4erxvErJqd0AAAAAElFTkSuQmCC
 <div class="output_area">
 <div class="prompt output_prompt">Out[11]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>count    2.550000e+03
-mean     1.698297e+06
-std      2.498479e+06
-min      5.044300e+04
-25%      7.557928e+05
-50%      1.124524e+06
-75%      1.700760e+06
-max      4.722711e+07
-Name: views, dtype: float64</pre>
+<pre><span class="code-line">count    2.550000e+03</span>
+<span class="code-line">mean     1.698297e+06</span>
+<span class="code-line">std      2.498479e+06</span>
+<span class="code-line">min      5.044300e+04</span>
+<span class="code-line">25%      7.557928e+05</span>
+<span class="code-line">50%      1.124524e+06</span>
+<span class="code-line">75%      1.700760e+06</span>
+<span class="code-line">max      4.722711e+07</span>
+<span class="code-line">Name: views, dtype: float64</pre>
 </div>
 </div>
 </div>
@@ -1871,8 +1871,8 @@ Name: views, dtype: float64</pre>
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#观看量分布图</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'views'</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#观看量分布图</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'views'</span><span class="p">])</span></span>
 </pre></div>
 </div>
 </div>
@@ -1882,7 +1882,7 @@ Name: views, dtype: float64</pre>
 <div class="output_area">
 <div class="prompt output_prompt">Out[12]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x68ede80&gt;</pre>
+<pre><span class="code-line">&lt;matplotlib.axes._subplots.AxesSubplot at 0x68ede80&gt;</pre>
 </div>
 </div>
 <div class="output_area">
@@ -2029,8 +2029,8 @@ Z7LHvt1QQBylCltyy1r7TWAn8LGzPv8F4G7gfuAR0tuNfST78hdJ7+pyiLTiKbH0T9WPAsYY80Pg
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#观看量小于4百万的分布图</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'views'</span><span class="p">]</span><span class="o">&lt;</span><span class="mf">0.4e7</span><span class="p">][</span><span class="s1">'views'</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#观看量小于4百万的分布图</span></span>
+<span class="code-line"><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'views'</span><span class="p">]</span><span class="o">&lt;</span><span class="mf">0.4e7</span><span class="p">][</span><span class="s1">'views'</span><span class="p">])</span></span>
 </pre></div>
 </div>
 </div>
@@ -2040,7 +2040,7 @@ Z7LHvt1QQBylCltyy1r7TWAn8LGzPv8F4G7gfuAR0tuNfST78hdJ7+pyiLTiKbH0T9WPAsYY80Pg
 <div class="output_area">
 <div class="prompt output_prompt">Out[13]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0xaf857b8&gt;</pre>
+<pre><span class="code-line">&lt;matplotlib.axes._subplots.AxesSubplot at 0xaf857b8&gt;</pre>
 </div>
 </div>
 <div class="output_area">
@@ -2272,7 +2272,7 @@ rkJggg==
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'views'</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">'comments'</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'views'</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">'comments'</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -2282,7 +2282,7 @@ rkJggg==
 <div class="output_area">
 <div class="prompt output_prompt">Out[14]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;seaborn.axisgrid.JointGrid at 0xaf65da0&gt;</pre>
+<pre><span class="code-line">&lt;seaborn.axisgrid.JointGrid at 0xaf65da0&gt;</pre>
 </div>
 </div>
 <div class="output_area">
@@ -2562,7 +2562,7 @@ ehIAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">'views'</span><span class="p">,</span> <span class="s1">'comments'</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span><span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">'RdBu_r'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">'views'</span><span class="p">,</span> <span class="s1">'comments'</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span><span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">'RdBu_r'</span><span class="p">)</span></span>
 </pre></div>
 </div>
 </div>
@@ -2572,7 +2572,7 @@ ehIAAAAASUVORK5CYII=
 <div class="output_area">
 <div class="prompt output_prompt">Out[15]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0xb4399b0&gt;</pre>
+<pre><span class="code-line">&lt;matplotlib.axes._subplots.AxesSubplot at 0xb4399b0&gt;</pre>
 </div>
 </div>
 <div class="output_area">
@@ -2709,8 +2709,8 @@ sxXAg8B17q5vUXVAJ+FERAJRBSwiEogSsIhIIErAIiKBKAGLiASiBCwiEogSsIhIIErAIiKB/C9L
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#创建新特征dis_quo</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'dis_quo'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'comments'</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">'views'</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#创建新特征dis_quo</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'dis_quo'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'comments'</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">'views'</span><span class="p">]</span></span>
 </pre></div>
 </div>
 </div>
@@ -2721,9 +2721,9 @@ sxXAg8B17q5vUXVAJ+FERAJRBSwiEogSsIhIIErAIiKBKAGLiASiBCwiEogSsIhIIErAIiKB/C9L
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#按照dis_quo进行排序</span>
-<span class="n">df</span><span class="p">[[</span><span class="s1">'title'</span><span class="p">,</span><span class="s1">'main_speaker'</span><span class="p">,</span><span class="s1">'views'</span><span class="p">,</span> <span class="s1">'comments'</span><span class="p">,</span><span class="s1">'dis_quo'</span><span class="p">,</span><span class="s1">'film_date'</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>\
-                                                    <span class="s1">'dis_quo'</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#按照dis_quo进行排序</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[[</span><span class="s1">'title'</span><span class="p">,</span><span class="s1">'main_speaker'</span><span class="p">,</span><span class="s1">'views'</span><span class="p">,</span> <span class="s1">'comments'</span><span class="p">,</span><span class="s1">'dis_quo'</span><span class="p">,</span><span class="s1">'film_date'</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>\</span>
+<span class="code-line">                                                    <span class="s1">'dis_quo'</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span></span>
 </pre></div>
 </div>
 </div>
