@@ -5879,12 +5879,12 @@ kQ4DMhERERGRDgMyEREREZEOAzIRERERkc7/AlYBTOu4N4bhAAAAAElFTkSuQmCC
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="python"></category></entry><entry><title>处理数据不均衡问题</title><link href="https://theworldofyu.github.io/chu-li-shu-ju-bu-jun-heng-wen-ti.html" rel="alternate"></link><published>2018-04-18T00:00:00+02:00</published><updated>2018-04-18T00:00:00+02:00</updated><author><name>小宇</name></author><id>tag:theworldofyu.github.io,2018-04-18:chu-li-shu-ju-bu-jun-heng-wen-ti.html</id><summary type="html">&lt;h3&gt;1.什么是非均衡数据&lt;/h3&gt;
+</summary><category term="python"></category></entry><entry><title>处理数据不均衡问题</title><link href="https://theworldofyu.github.io/chu-li-shu-ju-bu-jun-heng-wen-ti.html" rel="alternate"></link><published>2018-04-18T00:00:00+02:00</published><updated>2018-04-18T00:00:00+02:00</updated><author><name>小宇</name></author><id>tag:theworldofyu.github.io,2018-04-18:chu-li-shu-ju-bu-jun-heng-wen-ti.html</id><summary type="html">&lt;h4&gt;1.什么是非均衡数据&lt;/h4&gt;
 &lt;p&gt;样本中正例的数目与反例的数据相差较大，比如正例样本1000个，反例样本100个，10：1&lt;/p&gt;
-&lt;h3&gt;2.非均衡数据会遇到的问题&lt;/h3&gt;
+&lt;h4&gt;2.非均衡数据会遇到的问题&lt;/h4&gt;
 &lt;p&gt;如果不处理，为了提高分类正确率，分离器会更多的关注数目较多样例的类别，将数目较少的
 样例视为噪声。模型训练完后对低数目样例的预测能力会下降&lt;/p&gt;
-&lt;h3&gt;3.处理非均衡问题常用方法（基于样例做调整）&lt;/h3&gt;
+&lt;h4&gt;3.处理非均衡问题常用方法（基于样例做调整）&lt;/h4&gt;
 &lt;h5&gt;（1）:对有较多样例的类别进行欠采样：随机选择一定比例&lt;/h5&gt;
 &lt;p&gt;优点：提升运行时间和内存消耗问题  &lt;/p&gt;
 &lt;p&gt;缺点：可能丢失一些对分类有用的信息，随机采样的样本可能偏离正态分布，会导致对实际数据的预测不准确&lt;/p&gt;
@@ -5901,7 +5901,7 @@ kQ4DMhERERGRDgMyEREREZEOAzIRERERkc7/AlYBTOu4N4bhAAAAAElFTkSuQmCC
 &lt;img alt="" src="/images/smote2.png" /&gt;&lt;/p&gt;
 &lt;h5&gt;（5）可定义的SMOTE算法（MSMOTE）:对（4）的改进，以排除噪声的干扰&lt;/h5&gt;
 &lt;p&gt;具体改进：将较少类别的样本分成三类：安全样本、边界样本、噪声（通过该样本到其他样本的距离来划分），对安全样本选择k个相似样例进行合成，对边界样本选择最近的样本进行合成，对噪声不做任何处理。&lt;/p&gt;
-&lt;h3&gt;4.处理非均衡问题常用方法（基于算法做调整）&lt;/h3&gt;
+&lt;h4&gt;4.处理非均衡问题常用方法（基于算法做调整）&lt;/h4&gt;
 &lt;p&gt;（1）&lt;strong&gt;bagging算法&lt;/strong&gt;：Bootstrap Aggregating的缩写，以有放回的方式从数据集中选取N个训练子集，对N个子集进行训练，将训练结果以多数表决的方式作为最终结果。  &lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="/images/bagging.png" /&gt;  &lt;/p&gt;
 &lt;p&gt;优点：提高了算法的稳定性和准确性，较少了方差，防止了过拟合，在有噪声的环境下表现优于boosting算法&lt;br /&gt;
@@ -5911,7 +5911,7 @@ kQ4DMhERERGRDgMyEREREZEOAzIRERERkc7/AlYBTOu4N4bhAAAAAElFTkSuQmCC
 &lt;p&gt;缺点：对噪声敏感  &lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="/images/boosting.png" /&gt;  &lt;/p&gt;
 &lt;p&gt;（3）&lt;strong&gt;GBDT&lt;/strong&gt;：不同于adboost,GBDT在每个模型训练完后计算损失，并将其作为下次模型训练的目标变量&lt;/p&gt;
-&lt;h3&gt;总结：通常采用smote或者MSOMTE方法使数据变得平衡，然后在使用集成方法（GBDT,Xgboost等）来达到更好的泛化能力&lt;/h3&gt;</summary></entry><entry><title>python系列--matplotlib使用</title><link href="https://theworldofyu.github.io/python%E7%B3%BB%E5%88%97--matplotlib%E4%BD%BF%E7%94%A8.html" rel="alternate"></link><published>2018-04-18T00:00:00+02:00</published><updated>2018-04-18T00:00:00+02:00</updated><author><name>小宇</name></author><id>tag:theworldofyu.github.io,2018-04-18:python系列--matplotlib使用.html</id><summary type="html">
+&lt;h4&gt;总结：通常采用smote或者MSOMTE方法使数据变得平衡，然后在使用集成方法（GBDT,Xgboost等）来达到更好的泛化能力&lt;/h4&gt;</summary></entry><entry><title>python系列--matplotlib使用</title><link href="https://theworldofyu.github.io/python%E7%B3%BB%E5%88%97--matplotlib%E4%BD%BF%E7%94%A8.html" rel="alternate"></link><published>2018-04-18T00:00:00+02:00</published><updated>2018-04-18T00:00:00+02:00</updated><author><name>小宇</name></author><id>tag:theworldofyu.github.io,2018-04-18:python系列--matplotlib使用.html</id><summary type="html">
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
