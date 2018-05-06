@@ -2,15 +2,16 @@
 <html lang="en">
 
 <head>
-        <meta charset="utf-8">
+            <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>小宇大世界 - Authors</title>
+        <title>小宇大世界</title>
 
             <link href="https://theworldofyu.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="小宇大世界 Full Atom Feed" />
+            <link href="https://theworldofyu.github.io/feeds/zhi-yu-shi.atom.xml" type="application/atom+xml" rel="alternate" title="小宇大世界 Categories Atom Feed" />
 
         <!-- Bootstrap Core CSS -->
         <link href="https://theworldofyu.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
@@ -33,8 +34,21 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-		<meta property="og:locale" content="en">
+
+
+
+
+
+			<meta property="og:locale" content="en">
 		<meta property="og:site_name" content="小宇大世界">
+
+	<meta property="og:type" content="article">
+	<meta property="article:author" content="">
+	<meta property="og:url" content="https://theworldofyu.github.io/chu-li-shu-ju-bu-jun-heng-wen-ti.html">
+	<meta property="og:title" content="处理数据不均衡问题">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="https://theworldofyu.github.io/">
+	<meta property="article:published_time" content="2018-04-18 00:00:00+02:00">
 </head>
 
 <body>
@@ -68,12 +82,17 @@
     </nav>
 
     <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('https://theworldofyu.github.io/theme/images/home-bg.jpg')">
+        <header class="intro-header" style="background-image: url('https://theworldofyu.github.io/theme/images/post-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Articles by </h1>
+                        <h1>处理数据不均衡问题</h1>
+                        <span class="meta">作者:
+                                <a href="https://theworldofyu.github.io/author/xiao-yu.html">小宇</a>
+                             时间: 2018-04-18
+                        </span>
+                        
                     </div>
                 </div>
             </div>
@@ -84,14 +103,59 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-preview">
-            <a href="https://theworldofyu.github.io/author/xiao-yu.html" rel="bookmark">
-                <h2 class="post-title">
-                    小宇 (10)
-                </h2>
+    <!-- Post Content -->
+    <article>
+        <h3>1.什么是非均衡数据</h3>
+<p>样本中正例的数目与反例的数据相差较大，比如正例样本1000个，反例样本100个，10：1</p>
+<h3>2.非均衡数据会遇到的问题</h3>
+<p>如果不处理，为了提高分类正确率，分离器会更多的关注数目较多样例的类别，将数目较少的
+样例视为噪声。模型训练完后对低数目样例的预测能力会下降</p>
+<h3>3.处理非均衡问题常用方法（基于样例做调整）</h3>
+<h5>（1）:对有较多样例的类别进行欠采样：随机选择一定比例</h5>
+<p>优点：提升运行时间和内存消耗问题  </p>
+<p>缺点：可能丢失一些对分类有用的信息，随机采样的样本可能偏离正态分布，会导致对实际数据的预测不准确</p>
+<h5>（2）:对较少数目的类别进行过采样：复制多次来使数目增加</h5>
+<p>优点：不会损失信息，在采样的方法中表现较好  </p>
+<p>缺点：增加过拟合的风险  </p>
+<h5>（3）:先聚类在过采样：分别独立对正例和反例进行聚类使其分成几个小类别，然后对小类别进行  过采样，使得同类别的小类别具有相同的样本数，并且所有类别具有一定比例</h5>
+<p>优点：可以解决类别间样本不均衡的同时，还可以解决同一类的不同聚类间的样本不均衡问题  </p>
+<p>缺点：容易过拟合</p>
+<h5>（4）.对较少数目的类别选取M个子集，然后使用相似合成技术进行过采样，重复N 次，产生MXN个样本（SMOTE算法:synthetic minority oversampling technique）</h5>
+<p>优点：随机抽样并过采样，防止了过拟合，同时不丢失样本的信息  </p>
+<p>缺点：会产生类别重叠或者引入额外的噪声，在高维数据上运行效率低  </p>
+<p><img alt="" src="/images/smote.png" />
+<img alt="" src="/images/smote2.png" /></p>
+<h5>（5）可定义的SMOTE算法（MSMOTE）:对（4）的改进，以排除噪声的干扰</h5>
+<p>具体改进：将较少类别的样本分成三类：安全样本、边界样本、噪声（通过该样本到其他样本的距离来划分），对安全样本选择k个相似样例进行合成，对边界样本选择最近的样本进行合成，对噪声不做任何处理。</p>
+<h3>4.处理非均衡问题常用方法（基于算法做调整）</h3>
+<p>（1）<strong>bagging算法</strong>：Bootstrap Aggregating的缩写，以有放回的方式从数据集中选取N个训练子集，对N个子集进行训练，将训练结果以多数表决的方式作为最终结果。  </p>
+<p><img alt="" src="/images/bagging.png" />  </p>
+<p>优点：提高了算法的稳定性和准确性，较少了方差，防止了过拟合，在有噪声的环境下表现优于boosting算法<br />
+缺点：只有在基学习器表现较好的情况下，整体才会高准确率  </p>
+<p>（2）<strong>boosting算法</strong>：对整个训练集构建多个分类器，每个分类器会关注上一轮中分类错误的样本（对分类正确的样本减少权重，对分类错误的样本增加权重），直到没有错误的样本或者满足一定条件  </p>
+<p>优点：容易实施，不容易过拟合  </p>
+<p>缺点：对噪声敏感  </p>
+<p><img alt="" src="/images/boosting.png" />  </p>
+<p>（3）<strong>GBDT</strong>：不同于adboost,GBDT在每个模型训练完后计算损失，并将其作为下次模型训练的目标变量</p>
+<h3>总结：通常采用smote或者MSOMTE方法使数据变得平衡，然后在使用集成方法（GBDT,Xgboost等）来达到更好的泛化能力</h3>
+    </article>
+
+    <hr>
+
+
+	<ul>
+        <li>
+            <a href="https://theworldofyu.github.io/python系列--matplotlib使用.html">
+                上一篇: python系列--matplotlib使用
             </a>
-        </div>
-        <hr>
+        </li>
+        <li>
+            <a href="https://theworldofyu.github.io/python系列--seaborn使用.html">
+                下一篇: python系列--seaborn使用
+            </a>
+        </li>
+    </ul>
+ 
             </div>
         </div>
     </div>
