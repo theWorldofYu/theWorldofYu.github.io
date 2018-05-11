@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>小宇大世界</title>
+
+            <link href="https://theworldofyu.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="小宇大世界 Full Atom Feed" />
+            <link href="https://theworldofyu.github.io/feeds/xing-qie-dong.atom.xml" type="application/atom+xml" rel="alternate" title="小宇大世界 Categories Atom Feed" />
+
+        <!-- Bootstrap Core CSS -->
+        <link href="https://theworldofyu.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="https://theworldofyu.github.io/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="https://theworldofyu.github.io/theme/css/code_blocks/darkly.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+
+        <meta name="tags" contents="python" />
+
+
+			<meta property="og:locale" content="en">
+		<meta property="og:site_name" content="小宇大世界">
+
+	<meta property="og:type" content="article">
+	<meta property="article:author" content="">
+	<meta property="og:url" content="https://theworldofyu.github.io/链家房屋数据--预处理.html">
+	<meta property="og:title" content="链家房屋数据--预处理">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="https://theworldofyu.github.io/">
+	<meta property="article:published_time" content="2018-04-29 00:00:00+02:00">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://theworldofyu.github.io/">小宇大世界</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                        <li><a href="https://theworldofyu.github.io/category/zhi-yu-shi.html">知与识</a></li>
+                        <li><a href="https://theworldofyu.github.io/category/xing-qie-dong.html">行且动</a></li>
+                        <li><a href="https://theworldofyu.github.io/pages/guan-yu.html">关于</a></li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+        <header class="intro-header" style="background-image: url('https://theworldofyu.github.io/theme/images/post-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>链家房屋数据--预处理</h1>
+                        <span class="meta">作者:
+                                <a href="https://theworldofyu.github.io/author/xiao-yu.html">小宇</a>
+                             时间: 2018-04-29
+                        </span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="概述">概述<a class="anchor-link" href="#概述">¶</a></h3><p>该文章是对链家网房屋数据的预处理过程，数据规模30多万条，主要处理步骤如下：</p>
+<ul>
+<li>读取数据  </li>
+<li>探索数据  </li>
+<li>缺失值填补  </li>
+<li>数据清理  </li>
+<li>特征提取</li>
+<li>数据保存</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="读取数据">读取数据<a class="anchor-link" href="#读取数据">¶</a></h3><p>数据来自互联网下载，并以excel格式进行保存</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>导入相关库文件</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">time</span><span class="o">,</span><span class="nn">datetime</span></span>
+<span class="code-line"><span class="kn">import</span> <span class="nn">warnings</span></span>
+<span class="code-line"><span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>导入数据</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">u</span><span class="s1">'data2.xlsx'</span><span class="p">)</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="探索数据">探索数据<a class="anchor-link" href="#探索数据">¶</a></h3><h4 id="查看数据规模">查看数据规模<a class="anchor-link" href="#查看数据规模">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[3]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="code-line">(318851, 29)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="查看数据信息">查看数据信息<a class="anchor-link" href="#查看数据信息">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[4]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>URL</th>
+<th>ID</th>
+<th>Lng</th>
+<th>Lat</th>
+<th>CommunityID</th>
+<th>TradeTime</th>
+<th>DOM</th>
+<th>Followers</th>
+<th>Total price</th>
+<th>Price</th>
+<th>...</th>
+<th>building structure</th>
+<th>Ladder ratio(梯户比)</th>
+<th>Elevator</th>
+<th>Property rights for five years（房屋满五年）</th>
+<th>Subway</th>
+<th>District</th>
+<th>Community average</th>
+<th>Unnamed: 26</th>
+<th>Unnamed: 27</th>
+<th>Unnamed: 28</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>https://bj.lianjia.com/chengjiao/101084782030....</td>
+<td>101084782030</td>
+<td>116.475489</td>
+<td>40.019520</td>
+<td>1111027376244</td>
+<td>2016-08-09</td>
+<td>1464.0</td>
+<td>106</td>
+<td>415.0</td>
+<td>31680</td>
+<td>...</td>
+<td>钢混</td>
+<td>0.217</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>朝阳</td>
+<td>56021.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>1</th>
+<td>https://bj.lianjia.com/chengjiao/101086012217....</td>
+<td>101086012217</td>
+<td>116.453917</td>
+<td>39.881534</td>
+<td>1111027381879</td>
+<td>2016-07-28</td>
+<td>903.0</td>
+<td>126</td>
+<td>575.0</td>
+<td>43436</td>
+<td>...</td>
+<td>钢混</td>
+<td>0.667</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>朝阳</td>
+<td>71539.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+<p>2 rows × 29 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="code-line">Index(['URL', 'ID', 'Lng', 'Lat', 'CommunityID', 'TradeTime', 'DOM',</span>
+<span class="code-line">       'Followers', 'Total price', 'Price', 'Square', 'Living Room',</span>
+<span class="code-line">       'Drawing room', 'Kitchen', 'Bathroom', '楼', 'Building Type',</span>
+<span class="code-line">       'Construction time', 'renovation condition', 'building structure',</span>
+<span class="code-line">       'Ladder ratio(梯户比)', 'Elevator',</span>
+<span class="code-line">       'Property rights for five years（房屋满五年）', 'Subway', 'District',</span>
+<span class="code-line">       'Community average', 'Unnamed: 26', 'Unnamed: 27', 'Unnamed: 28'],</span>
+<span class="code-line">      dtype='object')</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>数据集包含30多万条房屋数据，每条数据有26个特征，各特征的含义如下：</p>
+<p><strong>URL</strong> : 有关房屋信息的网络地址<br />
+<strong>ID</strong> : 在平台上对应的房屋编号<br />
+<strong>Lng </strong> : 房屋位置信息-经度<br />
+<strong>Lat</strong> : 房屋位置信息-纬度<br />
+<strong>CommunityID</strong> : 房屋所属小区的编号<br />
+<strong>TradeTime</strong> : 房屋成交时间<br />
+<strong>DOM</strong> : 房屋在平台上展示时长(天)<br />
+<strong>Followers</strong> : 房屋的关注人数<br />
+<strong>Total price</strong> : 房屋总价格<br />
+<strong>Price</strong> : 房屋每平方价格<br />
+<strong>Square</strong> : 房屋面积<br />
+<strong>Living Room</strong> : 卧室数量<br />
+<strong>Drawing room</strong> : 客厅数量<br />
+<strong>Kitchen</strong> : 厨房数量<br />
+<strong>Bathroom</strong> : 卫生间数量<br />
+<strong>floor（楼）</strong> : 房屋所处楼层<br />
+<strong>Building Type</strong> : 住宅的建筑类型(塔楼，板楼，塔板结合)<br />
+<strong>Construction time</strong> : 建筑时间<br />
+<strong>renovation condition</strong> : 装修情况(简装,精装,其他等)<br />
+<strong>building structure</strong> : 建筑类型(钢混,混合,砖混,砖木等)<br />
+<strong>Ladder ratio</strong> :  所处楼层梯户比<br />
+<strong>Elevator</strong> : 是否有电梯<br />
+<strong>Property rights</strong> : 房屋年限是否满五年<br />
+<strong>Subway</strong> : 是否紧邻地铁<br />
+<strong>District</strong> : 所在区域(朝阳,昌平,东城,顺义,西城等)<br />
+<strong>Community average</strong> : 所在小区房屋均价</p>
+<p>部分列名称包含中文，且最后3列内容无意义，接下来我们将列名称更换为同一格式，并删除最后三列</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">col_name</span><span class="o">=</span><span class="p">[</span><span class="s1">'URL'</span><span class="p">,</span> <span class="s1">'ID'</span><span class="p">,</span> <span class="s1">'Lng'</span><span class="p">,</span> <span class="s1">'Lat'</span><span class="p">,</span> <span class="s1">'CommunityID'</span><span class="p">,</span> <span class="s1">'TradeTime'</span><span class="p">,</span> <span class="s1">'DOM'</span><span class="p">,</span></span>
+<span class="code-line">           <span class="s1">'Followers'</span><span class="p">,</span> <span class="s1">'TotalPrice'</span><span class="p">,</span> <span class="s1">'Price'</span><span class="p">,</span> <span class="s1">'Square'</span><span class="p">,</span> <span class="s1">'LivingRoom'</span><span class="p">,</span></span>
+<span class="code-line">           <span class="s1">'DrawingRoom'</span><span class="p">,</span> <span class="s1">'Kitchen'</span><span class="p">,</span> <span class="s1">'Bathroom'</span><span class="p">,</span> <span class="s1">'Floor'</span><span class="p">,</span> <span class="s1">'BuildingType'</span><span class="p">,</span></span>
+<span class="code-line">           <span class="s1">'ConstructionTime'</span><span class="p">,</span> <span class="s1">'RenovationCondition'</span><span class="p">,</span> <span class="s1">'BuildingStructure'</span><span class="p">,</span></span>
+<span class="code-line">           <span class="s1">'LadderRatio'</span><span class="p">,</span> <span class="s1">'Elevator'</span><span class="p">,</span><span class="s1">'PropertyRights'</span><span class="p">,</span> <span class="s1">'Subway'</span><span class="p">,</span> <span class="s1">'District'</span><span class="p">,</span></span>
+<span class="code-line">           <span class="s1">'CommunityAverage'</span><span class="p">,</span> <span class="s1">'Unnamed26'</span><span class="p">,</span> <span class="s1">'Unnamed27'</span><span class="p">,</span> <span class="s1">'Unnamed28'</span><span class="p">]</span></span>
+<span class="code-line"><span class="c1">#从新更换列名称</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span><span class="n">col_name</span></span>
+<span class="code-line"><span class="c1">#删除最后三行</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'Unnamed26'</span><span class="p">,</span> <span class="s1">'Unnamed27'</span><span class="p">,</span> <span class="s1">'Unnamed28'</span><span class="p">],</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">columns</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="code-line">Index(['URL', 'ID', 'Lng', 'Lat', 'CommunityID', 'TradeTime', 'DOM',</span>
+<span class="code-line">       'Followers', 'TotalPrice', 'Price', 'Square', 'LivingRoom',</span>
+<span class="code-line">       'DrawingRoom', 'Kitchen', 'Bathroom', 'Floor', 'BuildingType',</span>
+<span class="code-line">       'ConstructionTime', 'RenovationCondition', 'BuildingStructure',</span>
+<span class="code-line">       'LadderRatio', 'Elevator', 'PropertyRights', 'Subway', 'District',</span>
+<span class="code-line">       'CommunityAverage'],</span>
+<span class="code-line">      dtype='object')</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="缺失值处理">缺失值处理<a class="anchor-link" href="#缺失值处理">¶</a></h3><h4 id="查看缺失值">查看缺失值<a class="anchor-link" href="#查看缺失值">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="code-line">URL                         0</span>
+<span class="code-line">ID                          0</span>
+<span class="code-line">Lng                         0</span>
+<span class="code-line">Lat                         0</span>
+<span class="code-line">CommunityID                 0</span>
+<span class="code-line">TradeTime                   0</span>
+<span class="code-line">DOM                    157977</span>
+<span class="code-line">Followers                   0</span>
+<span class="code-line">TotalPrice                  0</span>
+<span class="code-line">Price                       0</span>
+<span class="code-line">Square                      0</span>
+<span class="code-line">LivingRoom                 32</span>
+<span class="code-line">DrawingRoom                 0</span>
+<span class="code-line">Kitchen                     0</span>
+<span class="code-line">Bathroom                    0</span>
+<span class="code-line">Floor                       0</span>
+<span class="code-line">BuildingType             2021</span>
+<span class="code-line">ConstructionTime            0</span>
+<span class="code-line">RenovationCondition         0</span>
+<span class="code-line">BuildingStructure           0</span>
+<span class="code-line">LadderRatio                 0</span>
+<span class="code-line">Elevator                   32</span>
+<span class="code-line">PropertyRights             32</span>
+<span class="code-line">Subway                     32</span>
+<span class="code-line">District                    0</span>
+<span class="code-line">CommunityAverage          463</span>
+<span class="code-line">dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>可以看到<strong>DOM</strong>、<strong>LivingRoom</strong>、<strong>BuildingType</strong>、<strong>Elevator</strong>、<strong>PropertyRights</strong>、<strong>Subway</strong>、<strong>CommunityAverage</strong> 7个特征有缺失值，其中<strong>DOM</strong>有一半的缺失值，对问题分析没有帮助作用，我们选择丢掉该特征</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#去除DOM特征</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'DOM'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>另外可以看到<strong>LivingRoom</strong>、<strong>Elevator</strong>、<strong>PropertyRights</strong>、<strong>Subway</strong>都有32条缺失值，我们看下其对应那些数据，以方便分析之间是否有关联</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">null_data</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'LivingRoom'</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span> <span class="o">|</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Elevator'</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>\</span>
+<span class="code-line">               <span class="o">|</span><span class="n">df</span><span class="p">[</span><span class="s1">'PropertyRights'</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">|</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Subway'</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>\</span>
+<span class="code-line">                <span class="p">[[</span><span class="s1">'URL'</span><span class="p">,</span><span class="s1">'LivingRoom'</span><span class="p">,</span><span class="s1">'Elevator'</span><span class="p">,</span><span class="s1">'PropertyRights'</span><span class="p">,</span><span class="s1">'Subway'</span><span class="p">]]</span></span>
+<span class="code-line"><span class="n">null_data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[9]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>URL</th>
+<th>LivingRoom</th>
+<th>Elevator</th>
+<th>PropertyRights</th>
+<th>Subway</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>92235</th>
+<td>https://bj.lianjia.com/chengjiao/BJ0000615040....</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>92251</th>
+<td>https://bj.lianjia.com/chengjiao/BJ0000615084....</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>92267</th>
+<td>https://bj.lianjia.com/chengjiao/BJ0000615132....</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>92270</th>
+<td>https://bj.lianjia.com/chengjiao/BJ0000615138....</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>92297</th>
+<td>https://bj.lianjia.com/chengjiao/BJ0000615208....</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>这4个特征的缺失值竟然对应着相同的32条数据，打开对应房屋信息链接，发现链接中有各特征的信息，还好32条数据不算太大，这里选择将链接中的特征信息记录下来对应的缺失值</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#从链接中记录的各特征信息</span></span>
+<span class="code-line"><span class="n">fill_data</span><span class="o">=</span><span class="p">{</span><span class="s1">'LivingRoom'</span><span class="p">:[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span></span>
+<span class="code-line">          <span class="s1">'Elevator'</span><span class="p">:[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span></span>
+<span class="code-line">          <span class="s1">'PropertyRights'</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span></span>
+<span class="code-line">          <span class="s1">'Subway'</span><span class="p">:[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span></span>
+<span class="code-line">          <span class="p">}</span></span>
+<span class="code-line"><span class="c1">#将信息转换成DataFrame格式方便数据填充</span></span>
+<span class="code-line"><span class="n">fill_df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">fill_data</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="n">null_data</span><span class="o">.</span><span class="n">index</span><span class="p">)</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#填充4个特征的缺失值</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">({</span><span class="s1">'LivingRoom'</span><span class="p">:</span> <span class="n">fill_df</span><span class="p">[</span><span class="s1">'LivingRoom'</span><span class="p">],</span></span>
+<span class="code-line">          <span class="s1">'Elevator'</span><span class="p">:</span><span class="n">fill_df</span><span class="p">[</span><span class="s1">'Elevator'</span><span class="p">],</span></span>
+<span class="code-line">          <span class="s1">'PropertyRights'</span><span class="p">:</span><span class="n">fill_df</span><span class="p">[</span><span class="s1">'PropertyRights'</span><span class="p">],</span></span>
+<span class="code-line">          <span class="s1">'Subway'</span><span class="p">:</span><span class="n">fill_df</span><span class="p">[</span><span class="s1">'Subway'</span><span class="p">]},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></span>
+<span class="code-line"><span class="c1">#查看填充后缺失值情况</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[[</span><span class="s1">'LivingRoom'</span><span class="p">,</span><span class="s1">'Elevator'</span><span class="p">,</span><span class="s1">'PropertyRights'</span><span class="p">,</span><span class="s1">'Subway'</span><span class="p">]]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[11]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="code-line">LivingRoom        0</span>
+<span class="code-line">Elevator          0</span>
+<span class="code-line">PropertyRights    0</span>
+<span class="code-line">Subway            0</span>
+<span class="code-line">dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>填充后以上4个特征已无缺失值，接下来处理<strong>BuildingType</strong>、<strong>CommunityAverage</strong>这两个特征的缺失值，经过对<strong>URL</strong>房屋信息的查看发现数据集是按照小区编号进行排列的，而同一小区的<strong>BuildingType</strong>和<strong>CommunityAverage</strong>基本相同或相差无几，所以我们将缺失值填补为相邻数据该特征的值</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#填补缺失值</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'BuildingType'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">'bfill'</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'CommunityAverage'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">'bfill'</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></span>
+<span class="code-line"><span class="c1">#查看填补后缺失值情况</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[[</span><span class="s1">'BuildingType'</span><span class="p">,</span><span class="s1">'CommunityAverage'</span><span class="p">]]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[12]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="code-line">BuildingType        0</span>
+<span class="code-line">CommunityAverage    0</span>
+<span class="code-line">dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#查看所有特征的缺失值</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[13]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="code-line">URL                    0</span>
+<span class="code-line">ID                     0</span>
+<span class="code-line">Lng                    0</span>
+<span class="code-line">Lat                    0</span>
+<span class="code-line">CommunityID            0</span>
+<span class="code-line">TradeTime              0</span>
+<span class="code-line">Followers              0</span>
+<span class="code-line">TotalPrice             0</span>
+<span class="code-line">Price                  0</span>
+<span class="code-line">Square                 0</span>
+<span class="code-line">LivingRoom             0</span>
+<span class="code-line">DrawingRoom            0</span>
+<span class="code-line">Kitchen                0</span>
+<span class="code-line">Bathroom               0</span>
+<span class="code-line">Floor                  0</span>
+<span class="code-line">BuildingType           0</span>
+<span class="code-line">ConstructionTime       0</span>
+<span class="code-line">RenovationCondition    0</span>
+<span class="code-line">BuildingStructure      0</span>
+<span class="code-line">LadderRatio            0</span>
+<span class="code-line">Elevator               0</span>
+<span class="code-line">PropertyRights         0</span>
+<span class="code-line">Subway                 0</span>
+<span class="code-line">District               0</span>
+<span class="code-line">CommunityAverage       0</span>
+<span class="code-line">dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>通过以上缺失值处理的过程，我们完成了数据预处理的第一步--得到完整的数据集，但是数据中可能包含许多异常值，离群值甚至错误信息，接下来需要做是对数据进行清洗，以提高数据的质量</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="数据清洗">数据清洗<a class="anchor-link" href="#数据清洗">¶</a></h3><h4 id="查看各特征信息">查看各特征信息<a class="anchor-link" href="#查看各特征信息">¶</a></h4><p>查看DrawingRoom特征的唯一值</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'DrawingRoom'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[14]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="code-line">array([1, 2, 0, 4, 3, 5, '中 14', '中 15', '中 16', '中 6', '高 14', '顶 6',</span>
+<span class="code-line">       '低 6', '低 16', '高 12', '低 15', '高 6', '底 28', '底 11', '中 24',</span>
+<span class="code-line">       '底 20', '中 22'], dtype=object)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>查看Bathroom的唯一值</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'Kitchen'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[15]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="code-line">array([1, 0, 2, 4, 3, '板塔结合', '板楼', '塔楼'], dtype=object)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>可以看到客厅与厨房的数量中还包括<strong>中 14</strong>，<strong>板塔结合</strong>等信息，这些信息貌似是其它特征的值，难道不同特征间某些数据错误的串行记录了？我们看下这些异常值所对应的是哪些数据</p>
+<p>查看DrawingRoom特征异常值对应的行索引</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'DrawingRoom'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])]</span><span class="o">.</span><span class="n">index</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[16]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="code-line">Int64Index([ 92235,  92251,  92267,  92270,  92297,  92299,  92300,  92304,</span>
+<span class="code-line">             92340,  92349,  92356,  92398,  92409,  92414,  92467,  92520,</span>
+<span class="code-line">             92610,  92660,  92814,  92845,  92899, 113275, 141376, 208214,</span>
+<span class="code-line">            220567, 220569, 220570, 220603, 224349, 243731, 244054, 245394],</span>
+<span class="code-line">           dtype='int64')</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>查看Kitchen特征异常值对应的行索引</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [17]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Kitchen'</span><span class="p">]</span><span class="o">==</span><span class="s1">'板塔结合'</span><span class="p">)</span><span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Kitchen'</span><span class="p">]</span><span class="o">==</span><span class="s1">'板楼'</span><span class="p">)</span><span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Kitchen'</span><span class="p">]</span><span class="o">==</span><span class="s1">'塔楼'</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[17]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="code-line">Int64Index([ 92235,  92251,  92267,  92270,  92297,  92299,  92300,  92304,</span>
+<span class="code-line">             92340,  92349,  92356,  92398,  92409,  92414,  92467,  92520,</span>
+<span class="code-line">             92610,  92660,  92814,  92845,  92899, 113275, 141376, 208214,</span>
+<span class="code-line">            220567, 220569, 220570, 220603, 224349, 243731, 244054, 245394],</span>
+<span class="code-line">           dtype='int64')</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>惊奇的发现，以上两个特征的异常值竟然对应着相同的数据，对这些包含异常值的32条数据进一步分析后发现有12个特征间出现了信息交叉，我们要做的是把交叉的信息放回到原有的位置，接下来是具体操作</p>
+<p>提取有异常值数据</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">outliers</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'DrawingRoom'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])]</span></span>
+<span class="code-line"><span class="n">olr_index</span><span class="o">=</span><span class="n">outliers</span><span class="o">.</span><span class="n">index</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>对交叉信息进行还原</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">olr_index</span><span class="p">,</span><span class="s1">'Floor'</span><span class="p">]</span><span class="o">=</span><span class="n">outliers</span><span class="p">[</span><span class="s1">'DrawingRoom'</span><span class="p">]</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">olr_index</span><span class="p">,</span><span class="s1">'BuildingType'</span><span class="p">]</span><span class="o">=</span><span class="n">outliers</span><span class="p">[</span><span class="s1">'Kitchen'</span><span class="p">]</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">olr_index</span><span class="p">,</span><span class="s1">'ConstructionTime'</span><span class="p">]</span><span class="o">=</span><span class="n">outliers</span><span class="p">[</span><span class="s1">'Bathroom'</span><span class="p">]</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">olr_index</span><span class="p">,</span><span class="s1">'BuildingStructure'</span><span class="p">]</span><span class="o">=</span><span class="n">outliers</span><span class="p">[</span><span class="s1">'Floor'</span><span class="p">]</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">olr_index</span><span class="p">,</span><span class="s1">'LadderRatio'</span><span class="p">]</span><span class="o">=</span><span class="n">outliers</span><span class="p">[</span><span class="s1">'BuildingType'</span><span class="p">]</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">olr_index</span><span class="p">,</span><span class="s1">'Elevator'</span><span class="p">]</span><span class="o">=</span><span class="n">outliers</span><span class="p">[</span><span class="s1">'ConstructionTime'</span><span class="p">]</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">olr_index</span><span class="p">,</span><span class="s1">'PropertyRights'</span><span class="p">]</span><span class="o">=</span><span class="n">outliers</span><span class="p">[</span><span class="s1">'RenovationCondition'</span><span class="p">]</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">olr_index</span><span class="p">,</span><span class="s1">'Subway'</span><span class="p">]</span><span class="o">=</span><span class="n">outliers</span><span class="p">[</span><span class="s1">'BuildingStructure'</span><span class="p">]</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>经过对交叉信息还原后，Floor,BuildingType等8个特征没有了异常值<br />
+但是DrawingRoom,Kitchen,Bathroom,RenovationCondition这4个特征还需处理<br />
+对DrawingRoom,Kitchen,Bathroom我们使用面积相近的的对应值进行填补<br />
+RenovationCondition我们使用该特征的众数进行填补</p>
+<p>对DrawingRoom,Kitchen,Bathroom使用面积相差5平方的相似数据的对应特征进行填充</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [20]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">olr_index</span><span class="p">):</span></span>
+<span class="code-line">    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s1">'DrawingRoom'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'Square'</span><span class="p">]</span><span class="o">-</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s1">'Square'</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">][</span><span class="s1">'DrawingRoom'</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span></span>
+<span class="code-line">    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s1">'Kitchen'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'Square'</span><span class="p">]</span><span class="o">-</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s1">'Square'</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">][</span><span class="s1">'Kitchen'</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span></span>
+<span class="code-line">    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s1">'Bathroom'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'Square'</span><span class="p">]</span><span class="o">-</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s1">'Square'</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">][</span><span class="s1">'Bathroom'</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>对于RenovationCondition使用该特征的众数进行填补</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">olr_index</span><span class="p">,</span><span class="s1">'RenovationCondition'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'RenovationCondition'</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>经过以上处理，我们解决了数据交叉的问题，但某些特征中还存在<strong>'未知'</strong>的数据，我们同样需要对其处理，具体处理如下</p>
+<p>查看<strong>'未知'</strong>数据的数量</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [22]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'ConstructionTime'</span><span class="p">]</span><span class="o">==</span><span class="s1">'未知'</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[22]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="code-line">(19285, 25)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [23]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'BuildingStructure'</span><span class="p">]</span><span class="o">==</span><span class="s1">'未知'</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[23]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="code-line">(192, 25)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'Floor'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span><span class="o">==</span><span class="s1">'未知'</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[24]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="code-line">(1271, 25)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>经过数据探索，只有ConstructionTime，BuildingStructure，Floor三个特征含有<strong>未知</strong>数据<br />
+因为同一小区或相近区域的ConstructionTime，BuildingStructure基本相同<br />
+数据集也是按照小区进行排序，所以我们将使用相邻数据的对应进行填充<br />
+Floor未知值中有具体楼层高度，但没有高、中、低等类别属性，我们通过设置阈值来填充具体属性</p>
+<p>将ConstructionTime未知数据替换为numpy的空类型，并使用相邻数据对应的ConstructionTime进行填充</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [25]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'ConstructionTime'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'未知'</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'ConstructionTime'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">'ffill'</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>对BuildingStructure特征执行相同的操作</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [26]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'BuildingStructure'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'未知'</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'BuildingStructure'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">'ffill'</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Floor特征是字符和数字的混合型，我们提取出房屋所在楼层，并将其转换成数值类型，之后定于map_floor函数使用阈值判断的方式将其映射为底、低、中、高4个类别</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [27]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'Floor'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'Floor'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">])</span> </span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'Floor'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'Floor'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'Floor'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[27]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="code-line">array([26, 22,  4, 21,  6,  8, 10, 23, 11,  3, 24, 19, 18, 25, 12, 14, 30,</span>
+<span class="code-line">       27,  5, 28,  9,  7, 17, 15, 29, 16, 13,  2, 33, 32, 20, 31,  1, 34,</span>
+<span class="code-line">       42, 37, 36, 35, 63, 57], dtype=int64)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [28]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="k">def</span> <span class="nf">map_floor</span><span class="p">(</span><span class="n">x</span><span class="p">):</span></span>
+<span class="code-line">    <span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span></span>
+<span class="code-line">        <span class="k">return</span> <span class="s1">'底'</span></span>
+<span class="code-line">    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">:</span></span>
+<span class="code-line">        <span class="k">return</span> <span class="s1">'低'</span></span>
+<span class="code-line">    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">24</span><span class="p">:</span></span>
+<span class="code-line">        <span class="k">return</span> <span class="s1">'中'</span></span>
+<span class="code-line">    <span class="k">else</span> <span class="p">:</span></span>
+<span class="code-line">        <span class="k">return</span> <span class="s1">'高'</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'Floor'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'Floor'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">map_floor</span><span class="p">)</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="特征提取">特征提取<a class="anchor-link" href="#特征提取">¶</a></h3><p>某些特征中可能包含多种信息，为了更深入分析数据，我们可以将其提取出来作为新的特征<br />
+比如TradeTime特征中我们可以将年份、月份分别提取出来作为单独的两个特征</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [29]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="c1">#提取年份和月份</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'YearOfTradeTime'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'TradeTime'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y'</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span></span>
+<span class="code-line"><span class="n">df</span><span class="p">[</span><span class="s1">'MonthOfTradeTime'</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">'TradeTime'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%m'</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="c1">#删除原特征</span></span>
+<span class="code-line"><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'TradeTime'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="保存数据">保存数据<a class="anchor-link" href="#保存数据">¶</a></h3><p>将预处理后的新的数据集进行保存以便于下次分析</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [30]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="code-line"><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'lianjia_data.csv'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="总结">总结<a class="anchor-link" href="#总结">¶</a></h3><ul>
+<li><p>对于30万的数据量，读取时会耗时半分多钟，计算时也需要几秒时间，看来对于更大规模数据操作真需要使用分布式计算来加快效率</p>
+</li>
+<li><p>数据的预处理过程真心劳神耗时，该数据集还只有26个特征，对更多维度的数据其任务量可想而知，因此需要一个明确的处理过程和更高效的处理工具，比如sklearn工具包</p>
+</li>
+<li><p>该文章只包含部分的数据预处理过程，如果用于机器学习，还需要进行类别编码，离群点去除，数据归一化等过程</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+    </article>
+
+    <hr>
+
+
+	<ul>
+        <li>
+            <a href="https://theworldofyu.github.io/TED数据集分析（二）.html">
+                上一篇: TED数据集分析（二）
+            </a>
+        </li>
+        <li>
+            <a href="https://theworldofyu.github.io/链家房屋数据--数据分析.html">
+                下一篇: 链家房屋数据--数据分析
+            </a>
+        </li>
+    </ul>
+ 
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="https://twitter.com/robert8384538">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/robert.liu.906">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://github.com/theworldofyu">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Blog powered by <a href="http://getpelican.com">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://theworldofyu.github.io/theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://theworldofyu.github.io/theme/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="https://theworldofyu.github.io/theme/js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
